@@ -24,6 +24,7 @@ public class Solution {
                     if (nextnum > amount || visited[nextnum]) {
                         continue;
                     }
+                    visited[nextnum] = true;
                     queue.add(nextnum);
                 }
             }
