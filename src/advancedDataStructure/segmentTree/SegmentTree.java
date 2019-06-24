@@ -1,6 +1,5 @@
 package advancedDataStructure.segmentTree;
 
-import java.util.Objects;
 
 public class SegmentTree<E> {
 

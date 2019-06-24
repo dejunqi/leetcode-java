@@ -1,6 +1,6 @@
 package leetcode0857;
-import java.util.Arrays;
-import java.util.PriorityQueue;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Solution {
 
@@ -14,24 +14,26 @@ public class Solution {
     }
 
     public double mincostToHireWorkers(int[] quality, int[] wage, int K) {
-        Worker[] workers = new Worker[quality.length];
 
-        for (int i = 0; i < quality.length; i++) {
+        int n = wage.length;
+        Worker[] workers = new Worker[n];
+        for (int i = 0; i < n; i++) {
             workers[i] = new Worker(quality[i], wage[i]);
         }
-        Arrays.sort(workers, (a, b) -> Double.compare(a.r, b.r));
+
+        Arrays.sort(workers, new Comparator<Worker>() {
+            @Override
+            public int compare(Worker o1, Worker o2) {
+                return Double.compare(o1.r, o2.r);
+            }
+        });
         double res = Double.MAX_VALUE;
-        double totalQuality = 0;
+        int totalQuality = 0;
+        PriorityQueue<Double> queue = new PriorityQueue<>((a, b) -> (int)(b - a));
 
         for (Worker w : workers) {
-            System.out.print("(" + w.r + ", " + w.q +  ")");
-        }
-        System.out.println();
-
-        PriorityQueue<Double> queue = new PriorityQueue<>((a, b) -> Double.compare(b, a));
-        for (Worker w : workers) {
-            totalQuality += w.q;
             queue.add(w.q);
+            totalQuality += w.q;
             if (queue.size() > K) {
                 totalQuality -= queue.poll();
             }
@@ -44,15 +46,15 @@ public class Solution {
     }
 
 
-
-
     public void test() {
-       int[] quality = {3,1,10,10,1};
-       int[] wage = {4,8,2,2,7};
-       int K = 3;
+//       int[] quality = {3,1,10,10,1};
+//       int[] wage = {4,8,2,2,7}; int K = 3;
+        int[] quality = {30,20,5};
+        int[] wage = {70,50,30};
+        int K = 2;
 
-       double res = mincostToHireWorkers(quality, wage, K);
-       System.out.println(res);
+        double res = mincostToHireWorkers(quality, wage, K);
+        System.out.println(res);
 
     }
 }
