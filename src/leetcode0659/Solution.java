@@ -1,9 +1,6 @@
 package leetcode0659;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Solution {
 
@@ -39,6 +36,8 @@ public class Solution {
         }
         return true;
     }
+
+
 
     public void test() {
         int[] nums = {1,2,3,4,5,6,6,8,9,9};
