@@ -1,4 +1,4 @@
-package nonleetcode.interviews.google;
+package nonleetcode.interviews.google.timedhashmap;
 
 import java.util.HashMap;
 import java.util.Map;

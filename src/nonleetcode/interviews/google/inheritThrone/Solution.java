@@ -1,6 +1,4 @@
-package nonleetcode.interviews.inheritThrone;
-
-import java.util.*;
+package nonleetcode.interviews.google.inheritThrone;
 
 public class Solution {
 
