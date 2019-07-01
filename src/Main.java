@@ -1,6 +1,4 @@
-//import leetcode0659.Solution;
-import nonleetcode.interviews.google.cokeMachine.*;
-
+import leetcode0486.Solution;
 
 public class Main {
 
@@ -9,6 +7,5 @@ public class Main {
         obj.test();
 
     }
-
 
 }
