@@ -1,4 +1,4 @@
-import leetcode0486.Solution;
+import leetcode0731.Solution;
 
 public class Main {
 
@@ -7,5 +7,4 @@ public class Main {
         obj.test();
 
     }
-
 }
