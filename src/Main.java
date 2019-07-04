@@ -1,4 +1,6 @@
-import leetcode0486.Solution;
+//import leetcode0486.Solution;
+
+import nonleetcode.interviews.google.textjustification.Solution;
 
 public class Main {
 
