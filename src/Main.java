@@ -1,5 +1,5 @@
 
-import leetcode0528.Solution;
+import leetcode0428.Solution;
 
 
 
