@@ -8,14 +8,15 @@ import java.util.Set;
 
 public class Solution {
     public int[] assignBikes(int[][] workers, int[][] bikes) {
+        int m = workers.length;
+        int n = bikes.length;
+        int[] assignedWorkers = new int[m];
+        boolean[] assignedBikes = new boolean[n];
+        Arrays.fill(assignedWorkers, -1);
+        Arrays.fill(assignedBikes, false);
 
-        int n = workers.length;
-        int m = bikes.length;
-        int[] res = new int[n];
-        Arrays.fill(res, -1);
-        Set<Integer> assignedBike = new HashSet<>();
 
-        PriorityQueue<int[]> queue = new PriorityQueue<int[]>((a, b) -> {
+        PriorityQueue<int[]> queue = new PriorityQueue<>((a, b) -> {
             if (a[0] != b[0]) {
                 return a[0] - b[0];
             } else if (a[1] != b[1]) {
@@ -25,26 +26,25 @@ public class Solution {
             }
         });
 
-        for (int i = 0; i < n; i++) {
-            int[] worker = workers[i];
-            for (int j = 0; j < m; j++) {
-                int[] bike = bikes[j];
-                int dist = Math.abs(worker[0] - bike[0]) + Math.abs(worker[1] - bike[1]);
-                queue.add(new int[] {dist, i, j});
+        for (int i = 0; i < m; i++) {
+            int[] wi = workers[i];
+            for (int j = 0; j < n; j++) {
+                int[] bj = bikes[j];
+                int dist = Math.abs(bj[0] - wi[0]) + Math.abs(bj[1] - wi[1]);
+                queue.offer(new int[] {dist, i, j});
             }
         }
 
-
-        while (assignedBike.size() < n) {
+        int cnt = 0;
+        while (cnt < m) {
             int[] triple = queue.poll();
-            int dist = triple[0], wokerIdx = triple[1], bikeIdx = triple[2];
-            if (res[wokerIdx] == -1 && !assignedBike.contains(bikeIdx)) {
-                res[wokerIdx] = bikeIdx;
-                assignedBike.add(bikeIdx);
+            int w = triple[2], b = triple[1];
+            if (!assignedBikes[b] && assignedWorkers[w] == -1) {
+                assignedWorkers[w] = b;
+                assignedBikes[b] = true;
             }
         }
 
-
-        return res;
+        return assignedWorkers;
     }
 }
