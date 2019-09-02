@@ -1,6 +1,5 @@
 
-import leetcode0395.Solution;
-
+import leetcode0827.Solution;
 
 
 public class Main {
