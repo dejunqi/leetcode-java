@@ -2,7 +2,7 @@ package leetcode0635;
 
 import java.util.List;
 
-public class Test {
+public class Solution {
 
     public void test() {
         LogSystem logSystem = new LogSystem();
