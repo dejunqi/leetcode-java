@@ -4,38 +4,39 @@ import java.util.List;
 
 public class LogSystem {
 
-    private class Entry {
+    private class Log {
         int id;
-        TimeStamp timeStampObject;
-        Entry(int id, TimeStamp timeStampObject) {
+        TimeStamp timeStamp;
+        Log(int id, TimeStamp timeStamp) {
             this.id = id;
-            this.timeStampObject = timeStampObject;
+            this.timeStamp = timeStamp;
         }
     }
 
-    private List<Entry> list;
+    private List<Log> list;
     public LogSystem() {
         list = new ArrayList<>();
     }
 
     public void put(int id, String timestamp) {
-        list.add(new Entry(id, new TimeStamp(timestamp)));
+        TimeStamp timeStamp = new TimeStamp(timestamp);
+        list.add(new Log(id, timeStamp));
     }
 
     public List<Integer> retrieve(String s, String e, String gra) {
-        TimeStamp ts = new TimeStamp(s);
-        TimeStamp te = new TimeStamp(e);
+        TimeStamp start = new TimeStamp(s);
+        TimeStamp end = new TimeStamp(e);
         List<Integer> res = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            Entry entry = list.get(i);
-            TimeStamp tp = entry.timeStampObject;
-            if (tp.compareTo(ts, gra) >= 0 && tp.compareTo(te, gra) <= 0) {
-                res.add(entry.id);
+        for (Log log: list) {
+            TimeStamp logTime = log.timeStamp;
+            if (logTime.compareTo(start, gra) >= 0 && logTime.compareTo(end, gra) <= 0) {
+                res.add(log.id);
             }
         }
-        return res;
 
+        return res;
     }
+
 }
 
 /**
