@@ -1,11 +1,19 @@
 package utils;
 
-public class Pair {
-    int key;
-    int value;
-    public Pair(int k, int v) {
+public class Pair<K, V> {
+    private K key;
+    private V value;
+    public Pair(K k, V v) {
         key = k;
         value = v;
+    }
+
+    public K getKey() {
+        return key;
+    }
+
+    public V getValue() {
+        return value;
     }
 
 }
