@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class Solution {
     public void test() {
+        /*
+        [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
+        * */
         Node n1 = new Node(1, new ArrayList<>());
         Node n2 = new Node(2, new ArrayList<>());
         Node n3 = new Node(3, new ArrayList<>());
@@ -29,6 +32,8 @@ public class Solution {
         Codec codec = new Codec();
         String res = codec.serialize(n1);
         System.out.println(res);
+
+        System.out.println(codec.serialize(codec.deserialize(res)));
 
     }
 }
