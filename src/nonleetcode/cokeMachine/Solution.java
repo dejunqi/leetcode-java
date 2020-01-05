@@ -1,4 +1,4 @@
-package nonleetcode.interviews.google.cokeMachine;
+package nonleetcode.cokeMachine;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

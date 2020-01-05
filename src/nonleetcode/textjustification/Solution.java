@@ -1,4 +1,4 @@
-package nonleetcode.interviews.google.textjustification;
+package nonleetcode.textjustification;
 
 /**
  * Date 05/07/2015

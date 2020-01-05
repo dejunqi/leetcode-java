@@ -1,4 +1,4 @@
-package nonleetcode.interviews.google.timedhashmap;
+package nonleetcode.timedhashmap;
 
 public class Solution {
 

@@ -1,4 +1,4 @@
-package nonleetcode.interviews.google.deleteNodeinNTree;
+package nonleetcode.deleteNodeinNTree;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package nonleetcode.interviews.google.predictWinner;
+package nonleetcode.predictWinner;
 
 /*
 拿纸牌游戏， 纸牌上面有值，比如说 100， 1， -1， 2， 200， 1. 然后两个人轮流拿，直到拿完。 但是每次只能拿从左边数起的前一个到两个数，
