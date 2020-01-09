@@ -2,7 +2,12 @@ package leetcode0518;
 
 public class Solution {
     public int change(int amount, int[] coins) {
-
+        if (amount == 0) {
+            return 1;
+        }
+        if (coins.length == 0) {
+            return 0;
+        }
         int[][] cache = new int[amount + 1][coins.length];
         for (int i = 0; i < amount + 1; i++) {
             for (int j = 0; j < coins.length; j++) {
