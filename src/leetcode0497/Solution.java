@@ -5,16 +5,16 @@ import java.util.Random;
 import java.util.TreeMap;
 
 public class Solution {
-    int[][] rects;
+    int[][] recs;
     int sumArea;
     TreeMap<Integer, Integer> map;
-    Random random;
+    Random rnd;
 
     public Solution(int[][] rects) {
-        this.rects = rects;
-        map = new TreeMap<>();
-        random = new Random();
+        recs = rects;
         sumArea = 0;
+        map = new TreeMap<>();
+        rnd = new Random();
         for (int i = 0; i < rects.length; i++) {
             int[] rec = rects[i];
             sumArea += Math.abs(rec[3] - rec[1] + 1) * Math.abs(rec[2] - rec[0] + 1);
@@ -23,11 +23,12 @@ public class Solution {
     }
 
     public int[] pick() {
-
-        int area = map.higherKey(random.nextInt(sumArea));
+        int area = map.higherKey(rnd.nextInt(sumArea));
         int idx = map.get(area);
-        int[] rec = this.rects[idx];
-        int x1 = rec[0], y1 = rec[1], x2 = rec[2], y2 = rec[3];
-        return new int[] {x1 + random.nextInt(x2 - x1 + 1), y1 + random.nextInt(y2 - y1 + 1)};
+        int[] rec = this.recs[idx];
+        int x1 = rec[0], y1 = rec[1];
+        int x2 = rec[2], y2 = rec[3];
+        return new int[] {x1 + rnd.nextInt(x2 - x1 + 1), y1 + rnd.nextInt(y2 - y1 + 1)};
     }
 }
+

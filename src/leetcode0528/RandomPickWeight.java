@@ -1,18 +1,14 @@
 package leetcode0528;
 
+
 import java.util.Random;
 import java.util.TreeMap;
 
 public class RandomPickWeight {
-
-    int sum;
-    int[] weights;
     TreeMap<Integer, Integer> map;
     Random random;
-
+    int sum = 0;
     public RandomPickWeight(int[] w) {
-        weights = w;
-        sum = 0;
         map = new TreeMap<>();
         random = new Random();
         for (int i = 0; i < w.length; i++) {
@@ -26,3 +22,4 @@ public class RandomPickWeight {
         return map.get(w);
     }
 }
+

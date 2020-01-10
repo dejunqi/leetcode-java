@@ -4,11 +4,12 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 public class ExamRoom {
-    private int capacity;
-    private TreeSet<Integer> set;
 
-    public ExamRoom(int n) {
-        capacity = n;
+    TreeSet<Integer> set;
+    int capacity;
+
+    public ExamRoom(int N) {
+        capacity = N;
         set = new TreeSet<>();
     }
 
@@ -19,30 +20,32 @@ public class ExamRoom {
         }
 
         if (set.size() == 1) {
-            int num = set.first();
-            if (num < capacity / 2) {
-                set.add(capacity - 1);
-                return capacity - 1;
+            int left = set.first();
+            int pos = -1;
+            if (capacity - 1 - left > left) {
+                pos = capacity - 1;
             } else {
-                set.add(0);
-                return 0;
+                pos = 0;
             }
+            set.add(pos);
+            return pos;
         }
 
-        // more then 2 people in the exam room
         Iterator<Integer> iter = set.iterator();
         int left = iter.next();
-        int dist = -1, pos = -1;
+        int pos = -1;
+        int dist = -1;
 
         if (left > 0) {
-            dist = left;
             pos = 0;
+            dist = left;
         }
 
         while (iter.hasNext()) {
             int right = iter.next();
-            if ((right - left) / 2 > dist) {
-                dist = (right - left) / 2;
+            int mid = (right - left) / 2;
+            if (mid > dist) {
+                dist = mid;
                 pos = left + dist;
             }
             left = right;
