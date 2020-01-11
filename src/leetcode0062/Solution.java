@@ -22,8 +22,8 @@ public class Solution {
     }
 
     public void test() {
-        int m = 1;
-        int n = 2;
+        int m = 7;
+        int n = 3;
         int res = uniquePaths(m, n);
         System.out.println(res);
     }

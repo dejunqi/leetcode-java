@@ -1,6 +1,6 @@
 
 //import leetcode0316.Solution;
-import nonleetcode.deleteInvalidEdgeInBST.Solution;
+import nonleetcode.inheritThrone.Solution;
 
 public class Main {
 
