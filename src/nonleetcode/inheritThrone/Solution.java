@@ -102,8 +102,6 @@ public class Solution {
         System.out.println(order);
 
         remove(A, "B");
-
-
         System.out.println(inheritOrder(A));
     }
 
