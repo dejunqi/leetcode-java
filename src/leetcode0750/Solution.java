@@ -15,7 +15,8 @@ public class Solution {
                         cnt += 1;
                     }
                 }
-
+                // C(cnt, 2) 在cnt对平衡的1 -- 1中抽出两对来构成矩形，总共有
+                // C(cnt, 2) 组合数种取法。
                 res += cnt * (cnt - 1) / 2 ;
             }
         }

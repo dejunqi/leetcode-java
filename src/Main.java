@@ -1,6 +1,8 @@
 
 //import leetcode0316.Solution;
-import nonleetcode.inheritThrone.Solution;
+import utils.practice.Solution;
+
+
 
 public class Main {
 

@@ -1,6 +1,10 @@
 package leetcode0853;
 
 
+import utils.Pair;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 
 public class Solution {
@@ -26,6 +30,28 @@ public class Solution {
     }
 
 
+    public int carFleet2(int target, int[] position, int[] speed) {
+        List<Pair<Integer, Double>> list = new ArrayList<>();
+        for (int i = 0; i < position.length; i++) {
+            int dist = target - position[i];
+            double t = (dist * 1.0) / speed[i];
+            list.add(new Pair<>(dist, t));
+        }
+
+        list.sort((a, b) -> {
+            return a.getKey() - b.getKey();
+        });
+        int cnt = 0;
+        double time = -1.0;
+        for (Pair p : list) {
+            double t = (double) p.getValue();
+            if (t > time) {
+                cnt += 1;
+                time = t;
+            }
+        }
+        return cnt;
+    }
 
 
     public void test() {

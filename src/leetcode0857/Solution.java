@@ -21,12 +21,7 @@ public class Solution {
             workers[i] = new Worker(quality[i], wage[i]);
         }
 
-        Arrays.sort(workers, new Comparator<Worker>() {
-            @Override
-            public int compare(Worker o1, Worker o2) {
-                return Double.compare(o1.r, o2.r);
-            }
-        });
+        Arrays.sort(workers, Comparator.comparingDouble(o -> o.r));
         double res = Double.MAX_VALUE;
         int totalQuality = 0;
         PriorityQueue<Double> queue = new PriorityQueue<>((a, b) -> (int)(b - a));
