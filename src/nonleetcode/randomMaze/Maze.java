@@ -1,6 +1,5 @@
 package nonleetcode.randomMaze;
 
-import java.util.Map;
 
 public class Maze {
     int size;
