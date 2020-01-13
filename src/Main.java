@@ -1,6 +1,6 @@
 
 //import leetcode0316.Solution;
-import utils.practice.Solution;
+import nonleetcode.randomMaze.Solution;
 
 
 
