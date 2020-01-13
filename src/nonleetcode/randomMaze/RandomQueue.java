@@ -12,7 +12,7 @@ public class RandomQueue {
         random = new Random();
     }
 
-    public void push(int[] point) {
+    public void add(int[] point) {
         double num = Math.random();
         if (num < 0.5) {
             queue.addFirst(point);
