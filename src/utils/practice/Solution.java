@@ -1,52 +1,32 @@
 package utils.practice;
 
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 
+import utils.TreeNode;
+
+/*
+put(1, "2017:01:01:23:59:59");
+put(2, "2017:01:01:22:59:59");
+put(3, "2016:01:01:00:00:00");
+retrieve("2016:01:01:01:01:01","2017:01:01:23:00:00","Year"); // return [1,2,3],
+because you need to return all logs within 2016 and 2017.
+
+retrieve("2016:01:01:01:01:01","2017:01:01:23:00:00","Hour"); // return [1,2],
+because you need to return all logs start
+
+from 2016:01:01:01 to 2017:01:01:23, where log 3 is left outside the range.
+*/
 public class Solution {
 
-    private class Item {
-        double ratio;
-        double quality;
-        Item(int w, int q) {
-            ratio = (w * 1.0) / q;
-            quality = q;
-        }
-    }
-
-    public double mincostToHireWorkers(int[] quality, int[] wage, int K) {
-        int len = quality.length;
-        Item[] items = new Item[len];
-        for (int i = 0; i < len; i++) {
-            items[i] = new Item(wage[i], quality[i]);
-        }
-
-        Arrays.sort(items, Comparator.comparingDouble(o -> o.ratio));
-        PriorityQueue<Double> queue = new PriorityQueue<>((a, b) -> (int)(b - a));
-        int totalQuality = 0;
-        double res = Double.MAX_VALUE;
-
-        for (Item item : items) {
-            queue.add(item.quality);
-            totalQuality += item.quality;
-            if (queue.size() > K) {
-                totalQuality -= queue.poll();
-            }
-            if (queue.size() == K) {
-                res = Math.min(res, totalQuality * item.ratio);
-            }
-        }
-        return res;
-    }
-
     public void test() {
-
-        int[] quality = {10,20,5};
-        int[] wage = {70,50,30};
-        int K = 2;
-        System.out.println(mincostToHireWorkers(quality, wage, K));
-
+        LogSystem log = new LogSystem();
+        log.put(1,"2017:01:01:23:59:59");
+        log.put(2,"2017:01:01:22:59:59");
+        log.put(3,"2016:01:01:00:00:00");
+        List<Integer> res1 = log.retrieve("2016:01:01:01:01:01","2017:01:01:23:00:00","Year");
+        for (Integer v : res1) {
+            System.out.println(v);
+        }
     }
 }

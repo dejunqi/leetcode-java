@@ -1,7 +1,5 @@
 package nonleetcode.cokeMachine;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  *
@@ -18,25 +16,45 @@ import java.util.List;
 
 
 public class Solution {
-    public boolean canObtainCokeWithinTargetRange(List<List<Integer>> buttons, List<Integer> target) {
-        return false;
+    public boolean canObtainCokeWithinTargetRange(int[][] buttons,  int[] target) {
+        Map<String, Boolean> memo = new HashMap<>();
+        return helper(buttons, target, memo, new int[] {0, 0});
+    }
+
+    private boolean helper(int[][] buttons, int[] target, Map<String, Boolean> memo, int[] cur) {
+        String key = cur[0] + "," + cur[1];
+        if (memo.containsKey(key)) {
+            return memo.get(key);
+        }
+
+        int left = cur[0], right = cur[1];
+        if (left >= target[1]) {
+            return false;
+        }
+
+        if (left >= target[0] && right <= target[1]) {
+            memo.put(key, true);
+            return true;
+        }
+
+        boolean res = false;
+        for (int[] btn : buttons) {
+            if (helper(buttons, target, memo, new int[] {cur[0] + btn[0], cur[1] + btn[1]})) {
+                res = true;
+                break;
+            }
+        }
+        memo.put(key, res);
+        return res;
     }
 
 
     public void test() {
-        Integer[][] btns = {{100, 120}, {200, 240}, {400, 410}};
-        List<List<Integer>> buttons = new ArrayList<>();
-        for (Integer[] btn : btns) {
-            List<Integer> tmp = Arrays.asList(btn);
-            buttons.add(tmp);
+        int[][] buttons = {{100, 120}, {200, 240}, {400, 410}};
+        int[][] targets = {{100, 110}, {90, 120}, {300, 360}, {310, 360}};
+        // results = [False, True, True, False]
+        for (int[] target : targets) {
+            System.out.println(canObtainCokeWithinTargetRange(buttons, target));
         }
-
-        List<Integer> target = new ArrayList<>();
-        target.add(310);
-        target.add(360);
-
-        boolean res = canObtainCokeWithinTargetRange(buttons, target);
-        System.out.println(res);
-
     }
 }
