@@ -1,9 +1,5 @@
 
-//import leetcode0685.Solution;
-import utils.practice.Solution;
-
-
-
+import leetcode0609.Solution;
 
 public class Main {
 
@@ -12,3 +8,6 @@ public class Main {
         obj.test();
     }
 }
+/*
+*
+* */
