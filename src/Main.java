@@ -1,5 +1,5 @@
 
-import dropbox.fileaccess.Solution;
+import dropbox.sharpness2dArr.Solution;
 
 public class Main {
 
