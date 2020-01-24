@@ -50,12 +50,6 @@ public class Solution {
                 board[i][j] = Math.random() > 0.5 ? 1 : 0;
             }
         }
-
-
-
     }
-
-
-
 
 }
