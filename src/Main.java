@@ -2,7 +2,7 @@
 //import leetcode1239.Solution;
 //import utils.practice.Solution;
 //import microsoftOA.longestPrefix.Solution;
-import microsoftOA.numberWithEqualDigitSum.Solution;
+import microsoftOA.minSwapPalindrome.Solution;
 
 public class Main {
 
