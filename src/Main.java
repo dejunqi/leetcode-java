@@ -2,7 +2,7 @@
 //import leetcode1239.Solution;
 //import utils.practice.Solution;
 //import microsoftOA.longestPrefix.Solution;
-import microsoftOA.minSwapPalindrome.Solution;
+import microsoftOA.longestSemiAlternatingSubstring.Solution;
 
 public class Main {
 
@@ -11,6 +11,3 @@ public class Main {
         obj.test();
     }
 }
-/*
-*
-* */

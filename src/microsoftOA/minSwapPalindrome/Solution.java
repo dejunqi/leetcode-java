@@ -55,7 +55,7 @@ public class Solution {
     }
 
     public void test() {
-        String[] testcase = {"mamad", "asflkj", "aabb", "ntiin"};
+        String[] testcase = {"manmand", "asflkj", "aabb", "ntiin"};
         for (String s : testcase) {
             System.out.println(minSwap(s));
         }
