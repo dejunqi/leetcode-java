@@ -5,36 +5,39 @@ import java.util.*;
 public class Solution {
     public int maxLength(List<String> arr) {
         int[] res = {0};
-        helper(arr, "",  0, res);
+        helper("", arr, 0, res);
         return res[0];
     }
 
-    private void helper(List<String> arr, String cur, int idx, int[] res) {
+    private void helper(String cur, List<String> arr, int idx, int[] res) {
         int len = arr.size();
-        boolean isUnique = uniqueChar(cur);
+        boolean isUnique = noDuplicateLetters(cur);
         if (isUnique) {
             res[0] = Math.max(res[0], cur.length());
         }
-        if (!isUnique || idx == len) {
-            return;
-        }
+
+        if (!isUnique || idx == len) return;
+
         for (int i = idx; i < len; i++) {
-            helper(arr, cur + arr.get(i), i + 1, res);
+            helper(cur + arr.get(i), arr, i + 1, res);
         }
     }
 
-    private boolean uniqueChar(String u) {
-        int len = u.length();
-        Set<Character> set = new HashSet<>();
+    private boolean noDuplicateLetters(String s) {
+        int[] chars = new int[26];
+        int len = s.length();
         for (int i = 0; i < len; i++) {
-            char c = u.charAt(i);
-            if (set.contains(c)) {
+            char c = s.charAt(i);
+            if (chars[c - 'a'] == 1) {
                 return false;
             }
-            set.add(c);
+            chars[c - 'a']++;
+
         }
         return true;
+
     }
+
 
     public void test() {
         String[] arr1 = {"un","iq","ue"};

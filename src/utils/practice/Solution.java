@@ -5,44 +5,43 @@ import java.util.*;
 
 
 public class Solution {
+    public int maxLength(List<String> arr) {
+        int[] res = {0};
+        helper("", arr, 0, res);
+        return res[0];
+    }
 
-    public int numMatchingSubseq(String S, String[] words) {
-
-        Map<Character, Queue<String>> map = new HashMap<>();
-        int start = 'a', end = 'z';
-        for (int i = start; i <= end; i++) {
-            map.put((char)i, new LinkedList<>());
+    private void helper(String cur, List<String> arr, int idx, int[] res) {
+        int len = arr.size();
+        boolean isUnique = noDuplicateLetters(cur);
+        if (isUnique) {
+            res[0] = Math.max(res[0], cur.length());
         }
 
-        for (String w : words) {
-            char c = w.charAt(0);
-            map.get(c).add(w);
-        }
+        if (!isUnique || idx == len) return;
 
-        int len = S.length();
-        int cnt = 0;
+        for (int i = idx; i < len; i++) {
+            helper(cur + arr.get(i), arr, i + 1, res);
+        }
+    }
+
+    private boolean noDuplicateLetters(String s) {
+        int[] chars = new int[26];
+        int len = s.length();
         for (int i = 0; i < len; i++) {
-            char c = S.charAt(i);
-            Queue<String> queue = map.get(c);
-            int size = queue.size();
-            for (int j = 0; j < size; j++) {
-                String word = queue.poll();
-                if (word.length() == 1) {
-                    cnt++;
-                } else {
-                    String subword = word.substring(1);
-                    map.get(subword.charAt(0)).add(subword);
-                }
+            char c = s.charAt(i);
+            if (chars[c - 'a'] == 1) {
+                return false;
             }
-        }
+            chars[c - 'a']++;
 
-        return cnt;
+        }
+        return true;
+
     }
 
     public void test() {
-        String s = "abcde";
-        String[] words = {"a", "bb", "acd", "ace"};
-        int res = numMatchingSubseq(s, words);
-        System.out.println(res);
+        String[] arr = {"un","iq","ue"};
+        System.out.println(maxLength(Arrays.asList(arr)));
     }
 }
