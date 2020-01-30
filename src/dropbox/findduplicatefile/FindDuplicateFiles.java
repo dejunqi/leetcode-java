@@ -103,6 +103,7 @@ public class FindDuplicateFiles {
                     "Could not generate hash from file", ex);
         }
     }
+
     private static String convertByteArrayToHexString(byte[] arrayBytes) {
         StringBuffer stringBuffer = new StringBuffer();
         for (int i = 0; i < arrayBytes.length; i++) {
