@@ -4,28 +4,33 @@ import java.util.*;
 
 public class Solution {
 
-    public void sharpness(int[][] grid) {
+    public int sharpness(int[][] grid) {
 
-        for(int i = 0; i < grid.length; i++) System.out.println(Arrays.toString(grid[i]));
+        for(int i = 0; i < grid.length; i++) {
+            System.out.println(Arrays.toString(grid[i]));
+        }
+        System.out.println();
 
         int m = grid.length, n = m == 0 ? 0 : grid[0].length;
 
         int[] dp = new int[n];
 
-        for(int i = 0; i < m; i++) dp[i] = grid[i][0];
+        for(int i = 0; i < m; i++) {
+            dp[i] = grid[i][0];
+        }
 
         for(int j = 1; j < n; j++) {
 
             int[] tmp = new int[n];
 
             for(int i = 0; i < m; i++) {
-
-                if(i == 0) tmp[i] = Math.max(dp[i], dp[i + 1]) + grid[i][j];
-
-                else if(i == m - 1) tmp[i] = Math.max(dp[i - 1], dp[i]) + grid[i][j];
-
-                else tmp[i] = Math.max(dp[i-1], Math.max(dp[i], dp[i + 1])) + grid[i][j];
-
+                if(i == 0) {
+                    tmp[i] = Math.max(dp[i], dp[i + 1]) + grid[i][j];
+                } else if (i == m - 1) {
+                    tmp[i] = Math.max(dp[i - 1], dp[i]) + grid[i][j];
+                } else {
+                    tmp[i] = Math.max(dp[i-1], Math.max(dp[i], dp[i + 1])) + grid[i][j];
+                }
             }
 
             dp = tmp;
@@ -34,7 +39,7 @@ public class Solution {
 
         System.out.println(Arrays.toString(dp));
 
-        return;
+        return dp[n - 1];
     }
 
     public int findSharpnessValue(int[][] matrix) {
@@ -71,18 +76,21 @@ public class Solution {
             maxSharpness = Math.max(maxSharpness, dp[i][n-1]);
         }
 
-        System.out.println(maxSharpness);
+//        System.out.println(maxSharpness);
 
         return maxSharpness;
 
     }
+
+
+
 
     public void test () {
 
         int[][] grid = {{5, 7, 2},
                         {7, 5, 8},
                         {9, 1, 5}};
-        findSharpnessValue(grid);
+//        findSharpnessValue(grid);
         sharpness(grid);
     }
 
