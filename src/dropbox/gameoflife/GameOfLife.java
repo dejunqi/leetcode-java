@@ -6,72 +6,63 @@ import java.util.Scanner;
 
 public class GameOfLife {
 
-    public void gameOfLife(int[][] board) {
-    }
+    public void gameOfLife(int[][] board) { }
 
-    private void processFile(String filename) {
-
+    public void processFile(String path) {
+        int row = 3;
+        int col = 1000000;
         Scanner scanner = null;
-        int N = 1000000;
-        int[][] board = new int[3][N];
-
+        int[][] board = new int[row][col];
 
         try {
-            File file = new File(filename);
-            if (!file.exists()) {
-                throw new IllegalArgumentException("No such dir");
-            }
-
-            FileInputStream fis = new FileInputStream(file);
-            scanner = new Scanner(new BufferedInputStream(fis), "UTF-8");
-            int M = 3;
+            FileInputStream stream = new FileInputStream(path);
+            scanner = new Scanner(stream);
             while (true) {
-                for (int i = 0; i < M; i++) {
+                for (int i = 0; i < row; i++) {
                     String line = scanner.nextLine();
+                    if (line.length() == 0) {
+                        return;
+                    }
 
-                    if (line.length() == 0) return;
-
-                    for (int j = 0; j < N; j++) {
+                    for (int j = 0; j < col; j++) {
                         board[i][j] = Character.getNumericValue(line.charAt(j));
                     }
                 }
 
                 gameOfLife(board);
-                writeFile(board, "data-" + (M - 3) + ".txt");
-                M += 3;
+                write(board, "data-" + (row - 3) + ".txt");
+                row += 3;
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
 
-    private void writeFile(int[][] board, String path) {
+    public void write(int[][] board, String path) {
 
+        int row = board.length;
+        int col = board[0].length;
         try {
             PrintWriter writer = new PrintWriter(path);
-            int row = 3;
-            int col = 1000000;
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < row; i++) {
                 for (int j = 0; j < col; j++) {
-                    char c = (char)board[i][j];
-                    sb.append(c);
+                    sb.append(board[i][j]);
                     if (j == col - 1) {
                         sb.append("\n");
                     }
                 }
             }
 
-            String data = sb.toString();
-            writer.print(data);
+            writer.write(sb.toString());
             writer.close();
 
-        } catch (IOException e) {
+        } catch(IOException e) {
             e.printStackTrace();
         }
     }
-
 
 
 
