@@ -1,7 +1,7 @@
 
+import microsoftOA.planeSeatReservation.Solution;
 
 
-import microsoftOA.particleVelocity.Solution;
 public class Main {
     public static void main(String[] args) {
         Solution obj = new Solution();
