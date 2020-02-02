@@ -28,7 +28,11 @@ and B[i] are cities at the two ends of the i-th road, return the maximal nework 
  */
 
 public class Solution {
-
+    /*
+      Greedy approach: first we construct a graph
+      Then look for the node with largest number of neighbors.
+      Then amount its neighbors, we look for the one with largest number of neighbors
+     */
     public int maxNetworkRank(int[] A, int[] B, int N) {
         Map<Integer, Set<Integer>> map = new HashMap<>();
         for (int i = 1; i <= N; i++) {
@@ -63,9 +67,11 @@ public class Solution {
 
 
     public void test() {
-        int[] A = {1, 2, 3, 3};
-        int[] B = {2, 3, 1, 4};
-        int N = 4;
+        // int[] A = {1, 2, 3, 3}, B = {2, 3, 1, 4};
+        // int N = 4
+        int[] A = {1, 1, 2, 1, 3}, B = {2, 3, 3, 4, 4};
+        // int[] A = {1}, int[] B = {2};
+        int N = 2;
         int res = maxNetworkRank(A, B, N);
         System.out.println(res);
     }

@@ -1,5 +1,14 @@
 package microsoftOA.fairIndexes;
+/*
+Given 2 array A and B consisting of N integers each.
 
+Index K is named fair if the four sums
+A[0] +...+A[k - 1], A[k] + ... + A[N - 1], B[0] +...+B[k - 1], B[k] + ... + B[N - 1]
+are all equal.
+
+return the number of fair index
+
+ */
 public class Solution {
     public int fairIndexes(int[] A, int[] B) {
         int len = A.length;

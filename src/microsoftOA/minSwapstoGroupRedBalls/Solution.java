@@ -27,6 +27,8 @@ import java.util.List;
  * 4th WWWWWRRRW
  *
                     W W R W W W R W R
+
+ The min swap to group red balls is the distance for the red balls to walk toward each other until they sit next to each other.
  */
 
 public class Solution {
@@ -52,7 +54,7 @@ public class Solution {
                 break;
             }
             redCnt -= 2;
-            res += (j - i - 1 - redCnt);
+            res += (j - i - 1 - redCnt); // the distance between two red balls.
             i++;
             j--;
         }

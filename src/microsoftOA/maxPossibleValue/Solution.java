@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class Solution {
     public int maxPossible(int N) {
-        // positive number, looks for the first digit that is <= 5, insert 5 in front of it
-        // negative number, looks for the first digit that is >= 5, insert 5 in front of it
+        // positive number, looks for the first digit that is < 5, insert 5 in front of it
+        // negative number, looks for the first digit that is > 5, insert 5 in front of it
         int flag = N >= 0 ? 1 : -1;
         N = Math.abs(N);
         ArrayList<Integer> nums = new ArrayList<>();

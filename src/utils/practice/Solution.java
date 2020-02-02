@@ -1,141 +1,72 @@
 package utils.practice;
 
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
+/*
+Greedy approach: start from the smallest sum container, add the largest value of the array , repeatly
+[1, 2, 3, 4, 5]
+[], // sum = 0
+[], // sum = 0
+[]  // sum = 0
+
+[1, 2, 3, 4]
+[5], // sum = 5
+[], // sum = 0
+[]  // sum = 0
+
+[1, 2, 3, 4]
+[5],
+[4],
+[]
+
+
+[1, 2]
+[5],
+[4],
+[3]
+
+
+[1, 2]
+[5],
+[4],
+[3, 2]
+
+[]
+[5],
+[4, 1],
+[3, 2]
+*/
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
 
 public class Solution {
-
-    /*
-    * Given a file path, find all duplicate files under the directory
-    * */
-    public List<List<String>> findDuplicates(String path) throws Exception {
-        List<List<String>> res = new ArrayList<>();
-        if (path == null || path.length() == 0) {
-            return res;
-        }
-        List<String> files = getAllFiles(path);
-        Map<String, List<String>> map = new HashMap<>();
-        for (String file : files) {
-            String hashcode = hashFile(new File(file), "MD5");
-            map.put(hashcode, map.getOrDefault(hashcode, new ArrayList<>()));
-            map.get(hashcode).add(file);
-        }
-
-        for (String hashcode : map.keySet()) {
-            List<String> list = map.get(hashcode);
-            if (list.size() > 1) {
-                res.add(list);
+    public int solution(int[] A) {
+        // write your code in Java SE 8
+        int candidate = Integer.MAX_VALUE;
+        int len = A.length;
+        Arrays.sort(A);
+        for (int i = A.length - 1; i > 0; i--) {
+            if (A[i] - A[i - 1] > 1) {
+                candidate = Math.min(A[i] - 1, candidate);
             }
         }
-        return res;
-    }
 
-    // api
-    private List<String> getAllFiles(String path) {
-        List<String> res = new ArrayList<>();
-        getAllFilesHelper(path, res);
-        return res;
-    }
-
-    private void getAllFilesHelper(String curPath, List<String> res) {
-        File dir = new File(curPath);
-        if (dir.isFile()) {
-            res.add(curPath);
-            return;
+        if (candidate == Integer.MAX_VALUE) {
+            return A[len - 1] + 1;
         }
 
-        String[] subdirs = dir.list();
-        if (subdirs == null || subdirs.length == 0) return;
-
-        for (String subdir : subdirs) {
-            getAllFilesHelper(curPath + "/" + subdir, res);
-        }
-    }
-
-    private Map<Long, List<String>> getAllFilesBySize(String path) {
-        Map<Long, List<String>> res = new HashMap<>();
-        getAllFilesBySizeHelper(path, res);
-        return res;
-    }
-
-    private void getAllFilesBySizeHelper(String path, Map<Long, List<String>> res) {
-        File file = new File(path);
-        if (file.isFile()) {
-            long size = file.length();
-            if (!res.containsKey(size)) {
-                res.put(size, new ArrayList<>());
-            }
-            res.get(size).add(path);
-            return;
+        if (candidate <= 0) {
+            return 1;
         }
 
-        String[] paths = file.list();
-        if (paths == null || paths.length == 0) return;
-
-        for (String filePath : paths) {
-            getAllFilesBySizeHelper(path + "/" + filePath, res);
-        }
+        return candidate;
     }
 
-    // given method
-    private String hashFile(File file, String algorithm)
-            throws Exception {
-        try (FileInputStream inputStream = new FileInputStream(file)) {
-            MessageDigest digest = MessageDigest.getInstance(algorithm);
 
-
-            byte[] bytesBuffer = new byte[1024];
-            int bytesRead = -1;
-
-
-            while ((bytesRead = inputStream.read(bytesBuffer)) != -1) {
-                digest.update(bytesBuffer, 0, bytesRead);
-            }
-
-
-            byte[] hashedBytes = digest.digest();
-
-
-            return convertByteArrayToHexString(hashedBytes);
-        } catch (NoSuchAlgorithmException | IOException ex) {
-            throw new Exception(
-                    "Could not generate hash from file", ex);
-        }
-    }
-
-    private static String convertByteArrayToHexString(byte[] arrayBytes) {
-        StringBuilder stringBuffer = new StringBuilder();
-        for (int i = 0; i < arrayBytes.length; i++) {
-            stringBuffer.append(Integer.toString((arrayBytes[i] & 0xff) + 0x100, 16)
-                    .substring(1));
-        }
-        return stringBuffer.toString();
-    }
-
-    public int hashFunction(String str) {
-        /**
-         * 整数的哈希函数
-        * 对于字符串的哈希函数, 可以把每个字符看成是数字, 然后把字符串分解为 26 进制的大整数, 例如
-        * code = c * 26 ^ 3 + o * 26 ^ 2 + d * 26 ^ 1 + e * 26 ^ 0
-        * */
-        int base = 256;
-        int M = 17;
-        int i = 0;
-        int len = str.length();
-        int res = 0;
-        while (i < len) {
-            res += (str.charAt(len - i - 1) * Math.pow(base, i)) % M;
-            i++;
-        }
-        return res;
-    }
-
-    public void test() {}
 }
+
 

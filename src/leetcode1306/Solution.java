@@ -3,6 +3,14 @@ package leetcode1306;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+Space: O(n)
+Time : O(n)
+
+obviously, due to the queue we allocate for space, it is O(n),
+As for time complexity, we are building the binary tree, the nodes we have for the trees
+is double to the number of element of the array. O(2 * n) ~ O(n)
+ */
 public class Solution {
     public boolean canReach(int[] arr, int start) {
         Queue<Integer> queue = new LinkedList<>();
@@ -12,9 +20,9 @@ public class Solution {
         queue.add(start);
         boolean[] visited = new boolean[arr.length];
         visited[start] = true;
+        int[] dirs = {1, -1}; // two direction, left and right
         while (!queue.isEmpty()) {
             int pos = queue.poll();
-            int[] dirs = {1, -1};
             for (int d : dirs) {
                 int next = pos + d * arr[pos];
                 if (next >= 0 && next < arr.length) {

@@ -18,8 +18,8 @@ There are four valid strings obtainable in two movess
 public class Solution {
     public int numOfmove(String s) {
         // Use 2 array with length of 2
-        // fist element of the array record the number of consecutive 'a'
-        // 2dn element of the array record the number of occurence of 3 consecutive character
+        // fist element record the number of consecutive 'a'
+        // 2dn element record the number of occurence of 3 consecutive character
         int[] ca = {0, 0};
         int[] cb = {0, 0};
         int len = s.length();

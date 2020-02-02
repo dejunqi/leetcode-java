@@ -9,6 +9,7 @@ public class Solution {
         return res[0];
     }
 
+    // DFS for array N elements, time complexity is O(N!)
     private void helper(String cur, List<String> arr, int idx, int[] res) {
         int len = arr.size();
         boolean isUnique = noDuplicateLetters(cur);

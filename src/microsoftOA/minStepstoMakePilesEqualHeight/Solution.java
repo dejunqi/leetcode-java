@@ -1,5 +1,6 @@
 package microsoftOA.minStepstoMakePilesEqualHeight;
 
+import java.util.Arrays;
 import java.util.PriorityQueue;
 
 /**
@@ -12,11 +13,14 @@ public class Solution {
     public int minStep(int[] piles) {
 
         int len = piles.length;
+        Arrays.sort(piles);
         int step = 0;
         int res = 0;
         for (int i = 1; i < len; i++) {
-            if (piles[i] < piles[i - 1]) {
-                step += 1;
+            if (piles[i] == piles[i - 1]) {
+                res += step;
+            } else {
+                step++;
                 res += step;
             }
         }

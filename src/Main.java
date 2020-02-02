@@ -1,6 +1,6 @@
 
-import microsoftOA.planeSeatReservation.Solution;
 
+import microsoftOA.maxNetworkRank.Solution;
 
 public class Main {
     public static void main(String[] args) {
