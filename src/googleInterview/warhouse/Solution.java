@@ -1,5 +1,7 @@
 package googleInterview.warhouse;
 
+import sun.jvm.hotspot.types.basic.BasicOopField;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -39,46 +41,42 @@ public class Solution {
         }
     }
 
-    private enum State {DESTROYED, LEAF, BOOM}
+    private enum State {LEAF, BOMB, DESTROYED_ROOM};
 
     public int solve(List<Room> rooms) {
         int[] res = {0};
         boolean[] visited = new boolean[rooms.size()];
         visited[0] = true;
-        State top = helper(rooms, 0, res, visited);
-        if (top == State.LEAF) {
+        if (helper(rooms, res, visited, 0) == State.LEAF) {
             res[0] += 1;
         }
         return res[0];
     }
 
-    private State helper(List<Room> rooms, int cur, int[] res, boolean[] visited) {
-        Room curRoom = rooms.get(cur);
-        List<Integer> children = curRoom.adjacent;
+    private State helper(List<Room> rooms, int[] res, boolean[] visited, int cur) {
+        List<Integer> children = rooms.get(cur).adjacent;
         if (cur != 0 && children.size() == 1) {
-            System.out.println("leaf " + cur);
             return State.LEAF;
         }
 
         State curState = State.LEAF;
-
         for (Integer v : children) {
             if (!visited[v]) {
                 visited[v] = true;
-                State state = helper(rooms, v, res, visited);
-                if (state == State.LEAF) {
+                State childState = helper(rooms, res, visited, v);
+                if (childState == State.LEAF) {
                     res[0] += 1;
-                    return State.BOOM;
+                    return State.BOMB;
                 }
-                if (state == State.BOOM) {
-                    curState = State.DESTROYED;
+                if (childState == State.BOMB) {
+                    curState = State.DESTROYED_ROOM;
                 }
             }
         }
-
-
         return curState;
     }
+
+
 
     /*
  0 - 1 - 2 - 3 - 7
@@ -115,7 +113,7 @@ public class Solution {
         List<Room> rooms = new ArrayList<>(Arrays.asList(r0, r1, r2, r3, r4, r5, r6, r7));
 
         int res = solve(rooms);
-        System.out.println(res);
+        System.out.println(res); // expect 3
 
     }
 
