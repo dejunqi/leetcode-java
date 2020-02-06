@@ -11,37 +11,41 @@ Output: 3
 Explanation: There are three words in words that are a subsequence of S: "a", "acd", "ace".
 */
 
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 
 public class Solution {
     public int numMatchingSubseq(String S, String[] words) {
-        Map<Character, Deque<String>> map = new HashMap<>();
-
-        for (char c = 'a'; c <= 'z'; c++) {
-            map.put(c, new LinkedList<>());
+        int res = 0;
+        int len = S.length();
+        Map<Character, Queue<String>> map = new HashMap<>();
+        for (String w : words) {
+            char c = w.charAt(0);
+            if (!map.containsKey(c)) {
+                map.put(c, new LinkedList<>());
+            }
+            map.get(c).add(w);
         }
 
-        for (String word : words) {
-            map.get(word.charAt(0)).addFirst(word);
-        }
-
-        int count = 0;
-        char[] chars = S.toCharArray();
-        for (char c : chars) {
-            Deque<String> queue = map.get(c);
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                String word = queue.removeFirst();
-                if (word.length() == 1) {
-                    count += 1;
-                } else {
-                    map.get(word.charAt(1)).addLast(word.substring(1));
+        for (int i = 0; i < len; i++) {
+            char c0 = S.charAt(i);
+            if (map.containsKey(c0)) {
+                Queue<String> queue = map.get(c0);
+                int size = queue.size();
+                for (int j = 0; j < size; j++) {
+                    String word = queue.poll();
+                    if (word.length() == 1) {
+                        res++;
+                    } else {
+                        char c1 = word.charAt(1);
+                        if (!map.containsKey(c1)) {
+                            map.put(c1, new LinkedList<>());
+                        }
+                        map.get(c1).add(word.substring(1));
+                    }
                 }
             }
         }
-        return count;
+
+        return res;
     }
 }
