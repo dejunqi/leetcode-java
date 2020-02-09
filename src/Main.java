@@ -1,4 +1,5 @@
-import utils.practice.Solution;
+
+import leetcode0213.Solution;
 
 public class Main {
     public static void main(String[] args) {
