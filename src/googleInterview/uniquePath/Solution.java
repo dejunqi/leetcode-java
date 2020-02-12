@@ -120,7 +120,39 @@ public class Solution {
 
     // followup4: 给定一个下界 (x == H)，找到能经过给定下界的所有路径数量 (x >= H)
     public int uniquePath5(int row, int col, int h) {
-        return -1;
+        int[][] dp = new int[row][col];
+        dp[0][0] = 1;
+        for (int j = 1; j < col; j++) {
+            for (int i = 0; i < row; i++) {
+                dp[i][j] = dp[i][j - 1];
+                if (i == 0) {
+                    dp[i][j] += dp[i + 1][j - 1];
+                } else if (i == row - 1) {
+                    dp[i][j] += dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] += dp[i - 1][j - 1] + dp[i + 1][j - 1];
+                }
+            }
+        }
+
+        for (int i = 0; i <= h; i++) {
+            for (int j = 0; j < col; j++) {
+                dp[i][j] = 0;
+            }
+        }
+
+        for (int j = 1; j < col; j++) {
+            for (int i = h; i >= 0; i--) {
+                dp[i][j] = dp[i][j - 1];
+                if (i == 0) {
+                    dp[i][j] += dp[i + 1][j - 1];
+                } else {
+                    dp[i][j] += dp[i + 1][j - 1] + dp[i - 1][j - 1];
+                }
+            }
+        }
+
+        return dp[0][col - 1];
     }
 
 

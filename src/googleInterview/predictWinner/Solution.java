@@ -11,13 +11,8 @@ https://www.geeksforgeeks.org/optimal-strategy-for-a-game-dp-31/类似题目
 
 import java.util.Arrays;
 
-
-
 public class Solution {
-    /**
-     * @param values: a vector of integers
-     * @return: a boolean which equals to true if the first player will win
-     */
+
     public boolean firstWillWin(int[] coins) {
         int sum = 0;
         for (int c : coins) {

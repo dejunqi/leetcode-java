@@ -34,10 +34,13 @@ public class Solution {
         if (node == null) {
             return;
         }
-        orders.add(node.name);
         List<Member> children = node.children;
-        for (Member v : children) {
-            helper(v, orders);
+        orders.add(node.name);
+        if (children.size() == 0) {
+            return;
+        }
+        for (Member n : children) {
+            helper(n, orders);
         }
     }
 
@@ -99,10 +102,10 @@ public class Solution {
         D.children.add(K);
 
         List<String> order = inheritOrder(A);
-        System.out.println(order);
+        System.out.println(order); // expect: [A, B, E, F, G, H, C, D, I, J, K]
 
         remove(A, "B");
-        System.out.println(inheritOrder(A));
+        System.out.println(inheritOrder(A)); // expect output: [A, E, F, G, H, C, D, I, J, K]
     }
 
 }

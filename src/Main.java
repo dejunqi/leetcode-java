@@ -1,5 +1,5 @@
 
-import googleInterview.uniquePath.Solution;
+import utils.practice.Solution;
 
 public class Main {
     public static void main(String[] args) {
