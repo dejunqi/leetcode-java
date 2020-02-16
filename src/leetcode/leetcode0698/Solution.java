@@ -30,7 +30,7 @@ public class Solution {
         }
 
         for (int i = idx; i < nums.length; i++) {
-            if (visited[i] == false) {
+            if (!visited[i]) {
                 visited[i] = true;
                 if (helper(nums, k, cursum + nums[i], subsetLen + 1, i + 1)) {
                     return true;

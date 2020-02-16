@@ -1,52 +1,53 @@
 package utils.practice;
 
 import java.util.*;
+import utils.TreeNode;
+
+import javax.lang.model.type.ArrayType;
 
 public class Solution {
-    private class Task {
-        char c;
-        int freq;
-        Task(char c, int f) {
-            this.c = c;
-            this.freq = f;
-        }
+
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        Map<String, Integer> map = new HashMap<>();
+        List<TreeNode> list = new ArrayList<>();
+        postOrder(root, map, list);
+        return list;
     }
-    public int leastInterval(char[] tasks, int n) {
-        PriorityQueue<Task> queue = new PriorityQueue<>((t1, t2) -> t2.freq - t1.freq);
-        Map<Character, Integer> map = new HashMap<>();
-        for (char t : tasks) {
-            map.put(t, map.getOrDefault(t, 0) + 1);
+
+    private String postOrder(TreeNode node, Map<String, Integer> map, List<TreeNode> list) {
+        if (node == null) {
+            return "";
         }
-
-        for (Character c : map.keySet()) {
-            queue.add(new Task(c, map.get(c)));
+        String left = postOrder(node.left, map, list);
+        String right = postOrder(node.right, map, list);
+        String key = node.val + "#" + left + "#" + right;
+        if (map.getOrDefault(key, 0) == 1) {
+            list.add(node);
         }
-
-        int res = 0;
-
-        while (!queue.isEmpty()) {
-            int k = n + 1;
-            List<Task> tmp = new ArrayList<>();
-            while (!queue.isEmpty() && k > 0) {
-                Task task = queue.poll();
-                task.freq -= 1;
-                k -= 1;
-                res += 1;
-                tmp.add(task);
-            }
-
-            for (Task t : tmp) {
-                if (t.freq > 0) {
-                    queue.add(t);
-                }
-            }
-
-            if (queue.isEmpty()) {
-                break;
-            }
-            res += k;
+        map.put(key, map.getOrDefault(key, 0) + 1);
+        System.out.println(node.val + " -- " + key);
+        for (String k : map.keySet()) {
+            System.out.println("\t" + k + ": " + map.get(k));
         }
+        return key;
+    }
 
-        return res;
+    public void test() {
+        TreeNode n1 = new TreeNode(1);
+        TreeNode n2 = new TreeNode(2);
+        TreeNode n3 = new TreeNode(3);
+        TreeNode n4 = new TreeNode(4);
+        TreeNode n5 = new TreeNode(2);
+        TreeNode n6 = new TreeNode(4);
+        TreeNode n7 = new TreeNode(4);
+
+        n1.left = n2; n1.right = n3;
+        n2.left = n4;
+        n3.left = n5; n3.right = n6;
+        n5.left = n7;
+        List<TreeNode> list = findDuplicateSubtrees(n1);
+        for (TreeNode n : list) {
+            System.out.println(n.val);
+        }
     }
 }
