@@ -1,4 +1,4 @@
-package leetcode0384;
+package leetcode.leetcode0384;
 
 import java.util.Arrays;
 import java.util.Random;

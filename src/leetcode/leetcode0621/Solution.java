@@ -1,4 +1,4 @@
-package leetcode0621;
+package leetcode.leetcode0621;
 
 
 import java.util.*;

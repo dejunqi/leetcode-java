@@ -1,42 +1,37 @@
-package leetcode0659;
+package leetcode.leetcode0659;
 
 import java.util.*;
 
 public class Solution {
 
-    // Use only one map, very slow, but it works
     public boolean isPossible(int[] nums) {
         Map<Integer, List<Integer>> map = new HashMap<>();
         map.put(0, new ArrayList<>());
 
-        for (int i = 0; i < nums.length; i++) {
-            int len = map.size();
-            int idx = len - 1;
-            while (true) {
-                List<Integer> list = map.get(idx);
-                int size = list.size();
-                if (size == 0 || nums[i] - list.get(size - 1) == 1) {
-                    list.add(nums[i]);
+        for (int val : nums) {
+            boolean allocate = false;
+            int idx = map.size() - 1;
+            for (int i = idx; i >= 0; i--) {
+                List<Integer> list = map.get(i);
+                if (list.size() == 0 || val - list.get(list.size() - 1) == 1) {
+                    list.add(val);
+                    allocate = true;
                     break;
                 }
-
-                if (idx == 0) {
-                    map.put(len, new ArrayList<>());
-                    map.get(len).add(nums[i]);
-                    break;
-                }
-                idx -= 1;
+            }
+            if (!allocate) {
+                map.put(idx + 1, new ArrayList<>());
+                map.get(idx + 1).add(val);
             }
         }
 
-        for (Integer k : map.keySet()) {
-            if (map.get(k).size() < 3) {
+        for (Integer key : map.keySet()) {
+            if (map.get(key).size() < 3) {
                 return false;
             }
         }
         return true;
     }
-
 
 
     public void test() {
