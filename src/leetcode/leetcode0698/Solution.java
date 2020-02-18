@@ -1,4 +1,4 @@
-package leetcode0698;
+package leetcode.leetcode0698;
 
 public class Solution {
 

@@ -1,4 +1,4 @@
-package leetcode0785;
+package leetcode.leetcode0785;
 
 public class Solution {
     public boolean isBipartite(int[][] graph) {

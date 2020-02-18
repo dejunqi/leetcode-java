@@ -1,53 +1,54 @@
 package utils.practice;
 
 import java.util.*;
-import utils.TreeNode;
-
-import javax.lang.model.type.ArrayType;
 
 public class Solution {
 
-    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
-        Map<String, Integer> map = new HashMap<>();
-        List<TreeNode> list = new ArrayList<>();
-        postOrder(root, map, list);
-        return list;
-    }
+    public int openLock(String[] deadends, String target) {
+        Set<String> deadLoks = new HashSet<>(Arrays.asList(deadends));
+        if (deadLoks.contains(target) || deadLoks.contains("0000")) {
+            return -1;
+        }
 
-    private String postOrder(TreeNode node, Map<String, Integer> map, List<TreeNode> list) {
-        if (node == null) {
-            return "";
+        Queue<String> queue = new LinkedList<>();
+        queue.add("0000");
+        deadLoks.add("0000");
+        int res = 0;
+        while (!queue.isEmpty()) {
+            res++;
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                String cur = queue.poll();
+                for (int j = 0; j < cur.length(); j++) {
+                    int val = Character.getNumericValue(cur.charAt(j));
+                    int pos = (val + 1) % 10, neg = (val -1 + 10) % 10;
+                    String s1 = cur.substring(0, j) + pos + cur.substring(j + 1);
+                    if (s1.equals(target)) {
+                        return res;
+                    }
+                    if (!deadLoks.contains(s1)) {
+                        deadLoks.add(s1);
+                        queue.add(s1);
+                    }
+
+                    String s2 = cur.substring(0, j) + neg + cur.substring(j + 1);
+                    if (s2.equals(target)) {
+                        return res;
+                    }
+                    if (!deadLoks.contains(s2)) {
+                        deadLoks.add(s2);
+                        queue.add(s2);
+                    }
+                }
+            }
         }
-        String left = postOrder(node.left, map, list);
-        String right = postOrder(node.right, map, list);
-        String key = node.val + "#" + left + "#" + right;
-        if (map.getOrDefault(key, 0) == 1) {
-            list.add(node);
-        }
-        map.put(key, map.getOrDefault(key, 0) + 1);
-        System.out.println(node.val + " -- " + key);
-        for (String k : map.keySet()) {
-            System.out.println("\t" + k + ": " + map.get(k));
-        }
-        return key;
+        return -1;
     }
 
     public void test() {
-        TreeNode n1 = new TreeNode(1);
-        TreeNode n2 = new TreeNode(2);
-        TreeNode n3 = new TreeNode(3);
-        TreeNode n4 = new TreeNode(4);
-        TreeNode n5 = new TreeNode(2);
-        TreeNode n6 = new TreeNode(4);
-        TreeNode n7 = new TreeNode(4);
-
-        n1.left = n2; n1.right = n3;
-        n2.left = n4;
-        n3.left = n5; n3.right = n6;
-        n5.left = n7;
-        List<TreeNode> list = findDuplicateSubtrees(n1);
-        for (TreeNode n : list) {
-            System.out.println(n.val);
-        }
+        String[] deadends = {"0201","0101","0102","1212","2002"};
+        String target = "0202";
+        int res = this.openLock(deadends, target);
+        System.out.println(res);
     }
 }

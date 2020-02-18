@@ -1,5 +1,5 @@
 
-import leetcode.leetcode0721.Solution;
+import leetcode.leetcode0323.Solution;
 
 public class Main {
     public static void main(String[] args) {
