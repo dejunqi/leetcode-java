@@ -1,4 +1,4 @@
-package leetcode1239;
+package leetcode.leetcode1239;
 
 import java.util.*;
 
