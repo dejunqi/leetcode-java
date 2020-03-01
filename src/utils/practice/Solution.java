@@ -4,51 +4,28 @@ import java.util.*;
 
 public class Solution {
 
-    public int openLock(String[] deadends, String target) {
-        Set<String> deadLoks = new HashSet<>(Arrays.asList(deadends));
-        if (deadLoks.contains(target) || deadLoks.contains("0000")) {
-            return -1;
-        }
-
-        Queue<String> queue = new LinkedList<>();
-        queue.add("0000");
-        deadLoks.add("0000");
+    int solution(int[] A, int M) {
         int res = 0;
-        while (!queue.isEmpty()) {
-            res++;
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                String cur = queue.poll();
-                for (int j = 0; j < cur.length(); j++) {
-                    int val = Character.getNumericValue(cur.charAt(j));
-                    int pos = (val + 1) % 10, neg = (val -1 + 10) % 10;
-                    String s1 = cur.substring(0, j) + pos + cur.substring(j + 1);
-                    if (s1.equals(target)) {
-                        return res;
-                    }
-                    if (!deadLoks.contains(s1)) {
-                        deadLoks.add(s1);
-                        queue.add(s1);
-                    }
-
-                    String s2 = cur.substring(0, j) + neg + cur.substring(j + 1);
-                    if (s2.equals(target)) {
-                        return res;
-                    }
-                    if (!deadLoks.contains(s2)) {
-                        deadLoks.add(s2);
-                        queue.add(s2);
-                    }
-                }
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < A.length; i++) {
+            int val = A[i];
+            while (val < 0) {
+                val += M;
             }
+            int mod = val % M;
+            map.put(mod, map.getOrDefault(mod, 0) + 1);
         }
-        return -1;
+        for (int k : map.keySet()) {
+            res = Math.max(res, map.get(k));
+        }
+        return res;
     }
 
     public void test() {
-        String[] deadends = {"0201","0101","0102","1212","2002"};
-        String target = "0202";
-        int res = this.openLock(deadends, target);
-        System.out.println(res);
+        int[] A = {-3, -2, 1, 0, 8, 7, 1};
+        int a = 3;
+        int[] B = {7, 1, 11, 8, 4, 10};
+        int b = 8;
+        System.out.println(solution(B, b));
     }
 }

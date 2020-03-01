@@ -7,7 +7,6 @@ import java.util.TreeSet;
 // https://leetcode.com/discuss/interview-question/447448/
 public class Solution {
     public int width(int[] X, int[] Y) {
-         // TreeSet<int[]> set = new TreeSet<>((a, b) -> a[1] - b[1]);
         if (X.length < 2) {
             return 0;
         }

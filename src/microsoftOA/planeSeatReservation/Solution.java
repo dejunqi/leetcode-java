@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * https://leetcode.com/discuss/interview-question/492652/
  *
- * We consider the get and put method for Set and Mao to O(1) time (averagely)
+ * We consider the get and put method for Set and Map to O(1) time (averagely)
  * The method takes O(N * 10) ~ O(N) time
  * O(N) space with the map and set to store the seats that has been reserved.
  */

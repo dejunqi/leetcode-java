@@ -17,12 +17,10 @@ public class Solution {
         int step = 0;
         int res = 0;
         for (int i = 1; i < len; i++) {
-            if (piles[i] == piles[i - 1]) {
-                res += step;
-            } else {
+            if (piles[i] != piles[i - 1]) {
                 step++;
-                res += step;
             }
+            res += step;
         }
         return res;
     }

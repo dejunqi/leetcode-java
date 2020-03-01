@@ -1,9 +1,8 @@
-
-import googleInterview.maxlenSequenceIndataStream.Solution;
+import leetcode.leetcode1143.Solution;
 
 public class Main {
     public static void main(String[] args) {
-        Solution obj = new Solution();
-        obj.test();
+        Solution so = new Solution();
+        so.test();
     }
 }

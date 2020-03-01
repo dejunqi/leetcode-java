@@ -1,29 +1,35 @@
-package leetcode0746;
+package leetcode.leetcode0746;
 
+
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+
     public int minCostClimbingStairs(int[] cost) {
+        int len = cost.length;
+        if (len < 3) {
+            return Math.min(cost[0], cost[1]);
+        }
 
-        Map<String, Integer> memo = new HashMap<>();
-        return Math.min(helper(cost, 0, 0, memo), helper(cost, 1, 0, memo));
-
+        int[] dp = new int[len + 1];
+        dp[0] = cost[0];
+        dp[1] = cost[1];
+        for (int i = 2; i <= len; i++) {
+            int val = i < len ? cost[i] : 0;
+            dp[i] = val + Math.min(dp[i - 1], dp[i - 2]);
+        }
+        return dp[len];
     }
 
-    private int helper(int[] cost, int idx, int curcost, Map<String, Integer> memo) {
-        if (idx >= cost.length) {
-            return curcost;
+    public void test() {
+        int[][] testcase = {
+                            {10, 15, 20},
+                            {1, 100, 1, 1, 1, 100, 1, 1, 100, 1}
+        };
+        for (int[] cost : testcase) {
+            System.out.println(minCostClimbingStairs(cost));
         }
-
-        String key = curcost + "," + idx;
-        if (memo.containsKey(key)) {
-            return memo.get(key);
-        }
-
-        curcost += cost[idx];
-        int res = Math.min(helper(cost, idx + 1, curcost, memo), helper(cost, idx + 2, curcost, memo));
-        memo.put(key, res);
-        return res;
     }
 }
