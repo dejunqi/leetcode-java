@@ -382,16 +382,17 @@ Knapsack01 Problem
 361-Bomb Enemy 
 486-Predict the Winner  * 
 518-Coin Change 2  
-975-Odd Even Jump  
+975-Odd Even Jump
+
 746-Min Cost Climbing Stairs
 718-Maximum Length of Repeated Subarray
 1314. Matrix Block Sum
-
 1143. Longest Common Subsequence
 516 Longest Palindromic Subsequence
 300-Longest Increasing Subsequence
 5. Longest Palindromic Substring
 Longest Common Substring (https://algorithms.tutorialhorizon.com/dynamic-programming-longest-common-substring/)
+1155. Number of Dice Rolls With Target Sum (Knap sack problem)
 
 
 
