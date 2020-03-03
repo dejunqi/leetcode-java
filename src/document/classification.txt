@@ -1,106 +1,106 @@
 
 ### 双指针与滑动窗口类
 
-002-Add Two Numbers  
-003-Longest Substring Without Repeating Characters  
-005-Longest Palindromic Substring  
-011-Container With Most Water  
-015-3Sum  
-016-3Sum Closet 
-018-4Sum  
+002-Add Two Numbers
+003-Longest Substring Without Repeating Characters
+005-Longest Palindromic Substring
+011-Container With Most Water
+015-3Sum
+016-3Sum Closet
+018-4Sum
 
-026-Remove Duplicate FromSorted Array  
-027-Remove Elements  
-028-Implement strStr  
-042-Trapping Rain Water 
-068-Text Justification 
-076-Minimum Window Substring  
-080-Remove Duplicates from Sorted Array II  
-125-Valid Palindrome  
-159-Longest Substring with At Most Two Distinct Characters  
-340-Longest Substring with At Most K Distinct Characters  
-395-Longest Substring with At Least K Repeating Characters 
-161-One Edit Distance  
-167-Two Sum II - Input array is sorted  
-209-Minimum Size Subarray Sum  
-239-Sliding Window Maximum  
-244-Shortest Word Distance II  
-245-Shortest Word Distance III 
-259-3Sum Smaller  
-680-Valid Palindrome II  
-274-H-Index 
-283-Move Zeroes 
-344-Reverse String 
-345-Reverse Vowels of a String  
-438-Find All Anagrams in a String  
-482-License Key Formatting  
-658 Find K Closet Elements  
-977 Squares of a Sorted Array  
-819 Most Common Word  
-567 Permutation in String  
-904-Fruit Into Baskets 
-862-Shortest Subarray with Sum at Least K `*`  
-986-Interval List Intersections `*` 
+026-Remove Duplicate FromSorted Array
+027-Remove Elements
+028-Implement strStr
+042-Trapping Rain Water
+068-Text Justification
+076-Minimum Window Substring
+080-Remove Duplicates from Sorted Array II
+125-Valid Palindrome
+159-Longest Substring with At Most Two Distinct Characters
+340-Longest Substring with At Most K Distinct Characters
+395-Longest Substring with At Least K Repeating Characters
+161-One Edit Distance
+167-Two Sum II - Input array is sorted
+209-Minimum Size Subarray Sum
+239-Sliding Window Maximum
+244-Shortest Word Distance II
+245-Shortest Word Distance III
+259-3Sum Smaller
+680-Valid Palindrome II
+274-H-Index
+283-Move Zeroes
+344-Reverse String
+345-Reverse Vowels of a String
+438-Find All Anagrams in a String
+482-License Key Formatting
+658 Find K Closet Elements
+977 Squares of a Sorted Array
+819 Most Common Word
+567 Permutation in String
+904-Fruit Into Baskets
+862-Shortest Subarray with Sum at Least K `*`
+986-Interval List Intersections `*`
 
 
 ### 排序及相关(三路快排, 归并, 快排)
 
-021-Merge Two Sorted Lists `*`  
-023-Merge k Sorted Lists `*` 
-056-Merge Intervals `*` 
-057-Insert Interval 
-075-Sort Colors  
-088-Merge Sorted Array  
-163-Missing Ranges 
-189-Rotate Array  
-215-Kth Largest Element in an Array  
-228-Summary Ranges  
-252-Meeting Rooms  
-280-Wiggle Sort 
-324-Wiggle Sort II  
-334-Increasing Triplet Subsequence 
-414-Third Maximum Number  
-853-Car Fleet 
+021-Merge Two Sorted Lists `*`
+023-Merge k Sorted Lists `*`
+056-Merge Intervals `*`
+057-Insert Interval
+075-Sort Colors
+088-Merge Sorted Array
+163-Missing Ranges
+189-Rotate Array
+215-Kth Largest Element in an Array
+228-Summary Ranges
+252-Meeting Rooms
+280-Wiggle Sort
+324-Wiggle Sort II
+334-Increasing Triplet Subsequence
+414-Third Maximum Number
+853-Car Fleet
 
 
 ### 查找表 (Map and Set)
-001-2sum 
-454-4Sum II 
-128-Longest Consecutive Sequence 
-217-Contain Duplicate 
-219-Contains Duplicate II 
-220-Contains Duplicate III 
-246-Strobogrammatic Number 
-249-Group Shifted Strings 
-266-Palindrome Permutation 
-290-Word Pattern 
-299-Bulls and Cows 
-311-Sparse Matrix Multiplication 
-325-Maximum Size Subarray Sum Equals k 
-560-Subarray Sum Equals K 
-336-Palindrome Pairs  
-349-Intersection of Two Arrays 
-383-Ransom Note 
-387-First Unique Character in a String 
+001-2sum
+454-4Sum II
+128-Longest Consecutive Sequence
+217-Contain Duplicate
+219-Contains Duplicate II
+220-Contains Duplicate III
+246-Strobogrammatic Number
+249-Group Shifted Strings
+266-Palindrome Permutation
+290-Word Pattern
+299-Bulls and Cows
+311-Sparse Matrix Multiplication
+325-Maximum Size Subarray Sum Equals k
+560-Subarray Sum Equals K
+336-Palindrome Pairs
+349-Intersection of Two Arrays
+383-Ransom Note
+387-First Unique Character in a String
 388-Longest Absolute File Path
-447-Number of Boomerangs 
-523-Continuous Subarray Sum 
-525-Contiguous Array 
-791 Custom Sort String 
+447-Number of Boomerangs
+523-Continuous Subarray Sum
+525-Contiguous Array
+791 Custom Sort String
 409 Longest Palindrome< `*` br>
-763-Partition Labels `*` 
-659-Split Array into Consecutive Subsequences `*` 
-890-Find and Replace Pattern `*` 
+763-Partition Labels `*`
+659-Split Array into Consecutive Subsequences `*`
+890-Find and Replace Pattern `*`
 953-Verifying an Alien Dictionary `*`
 448-Find All Numbers Disappeared in an Array `*`
 833-Find And Replace in String `*`
-859-Buddy Strings `*` 
-792-Number of Matching Subsequences `*` 
+859-Buddy Strings `*`
+792-Number of Matching Subsequences `*`
 
 
 ### 链表类
 019-Remove Nth Node From End of List
-024-Swap Node in Pairs 
+024-Swap Node in Pairs
 025-Reverse Nodes in k-Group
 061-Rotate List
 082-Remove Duplicates from Sorted List II
@@ -116,67 +116,67 @@
 146-LRU Cache
 160-Intersection of Two Linked Lists
 203-Remove Linked List Elements
-206-Reverse Linked List 
+206-Reverse Linked List
 234-Palindrome Linked List
 237-Delete Node in a Linked list
 287-Find the Duplicate Number
-328-Odd Even Linklist List 
+328-Odd Even Linklist List
 
 
 ### 栈与队列
-020-Valid Parentheses 
-150-Evaluate Reverse Polish Notation  
-032-Longest Valid Parentheses  
-084-Largest Rectangle in Histogram  
-224-Basic Calculator  
-227-Basic Calculator II  
-004-Median of Two Sorted Arrays 
-295-Find Median from Data Stream 
-358-Rearrange String k Distance Apart `*` 
-378 Kth Smallest Element in a Sorted Matrix `*` 
-388-Longest Absolute File Path 
-394-Decode String  
-716-Max Stack `*` 
-157-Read N Characters Given Read4 `*` 
-158-Read N Characters Given Read4 II-Call multiple times `*` 
-346-Moving Average from Data Stream 
-347-Top K Frequent Elements `*` 
-621-Task Scheduler `*` 
-692-Top K Frequent Words `*` 
-767-Reorganize String `*` 
-973-Closest Points to Origin `*` 
+020-Valid Parentheses
+150-Evaluate Reverse Polish Notation
+032-Longest Valid Parentheses
+084-Largest Rectangle in Histogram
+224-Basic Calculator
+227-Basic Calculator II
+004-Median of Two Sorted Arrays
+295-Find Median from Data Stream
+358-Rearrange String k Distance Apart `*`
+378 Kth Smallest Element in a Sorted Matrix `*`
+388-Longest Absolute File Path
+394-Decode String
+716-Max Stack `*`
+157-Read N Characters Given Read4 `*`
+158-Read N Characters Given Read4 II-Call multiple times `*`
+346-Moving Average from Data Stream
+347-Top K Frequent Elements `*`
+621-Task Scheduler `*`
+692-Top K Frequent Words `*`
+767-Reorganize String `*`
+973-Closest Points to Origin `*`
 844-Backspace String Compare `*`
 451 Sort Characters By Frequency `*`
-739-Daily Temperatures `*` 
-769-Max Chunks To Make Sorted `*` 
-768-Max Chunks To Make Sorted II `*` 
-774-Minimize Max Distance to Gas Station 
-1047-Remove All Adjacent Duplicates In String `*` 
-445-Add Two Numbers II `*` 
-636-Exclusive Time of Functions `*` 
-1054-Distant Barcodes `*` 
-622-Design Circular Queue `*` 
-1057-Campus Bikes `*` 
+739-Daily Temperatures `*`
+769-Max Chunks To Make Sorted `*`
+768-Max Chunks To Make Sorted II `*`
+774-Minimize Max Distance to Gas Station
+1047-Remove All Adjacent Duplicates In String `*`
+445-Add Two Numbers II `*`
+636-Exclusive Time of Functions `*`
+1054-Distant Barcodes `*`
+622-Design Circular Queue `*`
+1057-Campus Bikes `*`
 
 
 ### 数据结构设计类
-155-Min Stack 
-232-Implement Queue using Stacks 
-251-Flatten 2D Vector `*` 
-341-Flatten Nested List Iterator 
-271-Encode and Decode Strings * 
+155-Min Stack
+232-Implement Queue using Stacks
+251-Flatten 2D Vector `*`
+341-Flatten Nested List Iterator
+271-Encode and Decode Strings *
 281-Zigzag Iterator `*`
-284-Peeking Iterator `*` 
-348-Design Tic-Tac-Toe `*` 
-355-Design Twitter 
-380-Insert Delete GetRandom O(1) `*` 
-384-Shuffle an Array `*` 
-398-Random Pick Index `*` 
-460-LFU Cache 
-535-Encode and Decode TinyURL `*` 
-681-Next Closest Time `*` 
-635-Design Log Storage System `*` 
-657-Robot Return to Origin `*` 
+284-Peeking Iterator `*`
+348-Design Tic-Tac-Toe `*`
+355-Design Twitter
+380-Insert Delete GetRandom O(1) `*`
+384-Shuffle an Array `*`
+398-Random Pick Index `*`
+460-LFU Cache
+535-Encode and Decode TinyURL `*`
+681-Next Closest Time `*`
+635-Design Log Storage System `*`
+657-Robot Return to Origin `*`
 
 
 ### 二分查找
@@ -196,192 +196,192 @@
 
 ### 二叉树
 094-Binary Tree Inorder Traversal `*`
-095-Unique Binary Search Trees II 
+095-Unique Binary Search Trees II
 096-Unique Binary Search Trees
-098-Validate Binary Search Tree 
+098-Validate Binary Search Tree
 099-Recover Binary Search Tree
-100-Same Tree `*` 
-102-Binary Tree Level Order Traversal 
-103-Binary Tree Zigzag Level Order Traversal  
-104-Maximum Depth of Binary Tree 
-105-Construct Binary Tree from Preorder and Inorder Traversal 
-106-Construct Binary Tree from Inorder and Postorder Traver 
-108-Convert Sorted Array to Binary Search Tree  
-110-Balanced Binary Tree  
-111-Minimum Depth of Binary Tree 
-112-Path Sum 
-113-Path Sum II 
+100-Same Tree `*`
+102-Binary Tree Level Order Traversal
+103-Binary Tree Zigzag Level Order Traversal
+104-Maximum Depth of Binary Tree
+105-Construct Binary Tree from Preorder and Inorder Traversal
+106-Construct Binary Tree from Inorder and Postorder Traver
+108-Convert Sorted Array to Binary Search Tree
+110-Balanced Binary Tree
+111-Minimum Depth of Binary Tree
+112-Path Sum
+113-Path Sum II
 116-Populating Next Right Pointers in Each Node`*`
-124-Binary Tree Maximum Path Sum 
-129-Summ Root to Leaf Numbers 
-144-Binary Tree Preorder Traversal 
+124-Binary Tree Maximum Path Sum
+129-Summ Root to Leaf Numbers
+144-Binary Tree Preorder Traversal
 
-145-Binary Tree Postorder Traversal 
-156-Binary Tree Upside Down 
-173-Binary Search Tree Iterator 
-199-Binary Tree Right Side View 
-222-Count Complete Tree Nodes  
-226-Invert Binary Tree 
-230-Kth Smallest Element in a BST `*` 
-235-Lowest Common Ancestor of Binary Search Tree 
-236-Lowest Common Ancestor of a Binary Tree 
-255-Verify Preorder Sequence in Binary Search Tree 
+145-Binary Tree Postorder Traversal
+156-Binary Tree Upside Down
+173-Binary Search Tree Iterator
+199-Binary Tree Right Side View
+222-Count Complete Tree Nodes
+226-Invert Binary Tree
+230-Kth Smallest Element in a BST `*`
+235-Lowest Common Ancestor of Binary Search Tree
+236-Lowest Common Ancestor of a Binary Tree
+255-Verify Preorder Sequence in Binary Search Tree
 
-250-Count Univalue Subtrees  
-257-Binary Tree Paths 
+250-Count Univalue Subtrees
+257-Binary Tree Paths
 285-Inorder Successor in BST `*`
-297-Serialize and Deserialize Binary Tree  
-298-Binary Tree Longest Consecutive Sequence  
-314-Binary Tree Vertical Order Traversal  
-331-Verify Preorder serialization of a binary tree 
+297-Serialize and Deserialize Binary Tree
+298-Binary Tree Longest Consecutive Sequence
+314-Binary Tree Vertical Order Traversal
+331-Verify Preorder serialization of a binary tree
 333-Largest BST Subtree `*`
-404-Sum of Left Leaves `*` 
-426-Convert Binary Search Tree to Sorted Doubly Linked List`*` 
+404-Sum of Left Leaves `*`
+426-Convert Binary Search Tree to Sorted Doubly Linked List`*`
 
-437-Path Sum III `*` 
-449-Serialize and Deserialize BST `*` 
-450-Delete Node in a BST `*` 
-572-Subtree of Another Tree `*` 
-617-Merge two binary trees `*` 
-654-Maximum Binary Tree `*` 
+437-Path Sum III `*`
+449-Serialize and Deserialize BST `*`
+450-Delete Node in a BST `*`
+572-Subtree of Another Tree `*`
+617-Merge two binary trees `*`
+654-Maximum Binary Tree `*`
 655 Print Binary Tree `*`
-671-Second Minimum Node In a Binary Tree `*` 
-652 Find Duplicate Subtrees `*` 
-951-Flip Equivalent Binary Trees `*` 
-366-Find Leaves of Binary Tree `*` 
+671-Second Minimum Node In a Binary Tree `*`
+652 Find Duplicate Subtrees `*`
+951-Flip Equivalent Binary Trees `*`
+366-Find Leaves of Binary Tree `*`
 
 
 
 ### 递归与回溯/记忆化搜索
 
-017-Letter Combinations of Phone Number  
-022-Generate Parentheses 
-039-Combination Sum 
-046-Permutations  
-040-Combination Sum II  
-047-Permutation2  
-051-N Queue 
-052-N Queen-II 
-060-Permutation Sequence 
-077-combinations 
-078-subsets 
-079-Word Search 
-090-subset-II 
-093-Restore IP Addresses  
-130-Surrounded Regions 
-131-Palindrome Partitioning  
-139-Word Break  
-140-Word Break II 
-200-Number of Islands 
-212-Word Search II 
-216-Combination Sum III 
-241-Different Ways to Add Parentheses  
-247-Strobogrammatic Number II  
-254-Factor Combinations 
-267-Palindrome Permutation II 
-273-Integer to English Words  `*` 
+017-Letter Combinations of Phone Number
+022-Generate Parentheses
+039-Combination Sum
+046-Permutations
+040-Combination Sum II
+047-Permutation2
+051-N Queue
+052-N Queen-II
+060-Permutation Sequence
+077-combinations
+078-subsets
+079-Word Search
+090-subset-II
+093-Restore IP Addresses
+130-Surrounded Regions
+131-Palindrome Partitioning
+139-Word Break
+140-Word Break II
+200-Number of Islands
+212-Word Search II
+216-Combination Sum III
+241-Different Ways to Add Parentheses
+247-Strobogrammatic Number II
+254-Factor Combinations
+267-Palindrome Permutation II
+273-Integer to English Words  `*`
 282-Expression Add Operators
 286-Walls and Gates
-291-Word Pattern II 
-294-Flip Game II 
-316-Remove Duplicate Letters  
-322-Coin Change  
-329-Longest Increasing Path in a Matrix 
-403-Frog Jump 
-486-Predict the Winner  
-494-Target Sum  
-518-Coin Change II 
+291-Word Pattern II
+294-Flip Game II
+316-Remove Duplicate Letters
+322-Coin Change
+329-Longest Increasing Path in a Matrix
+403-Frog Jump
+486-Predict the Winner
+494-Target Sum
+518-Coin Change II
 516 Longest Palindromic Subsequence
-695 Max Area of Island 
-698-Partition to K Equal Sum Subsets 
+695 Max Area of Island
+698-Partition to K Equal Sum Subsets
 1066 - Campus Bikes II
-489-Robot Room Cleaner (深搜) 
+489-Robot Room Cleaner (深搜)
 410-Split Array Largest Sum
 737-Sentence Similarity II (深搜与回溯)
-188-Best Time to Buy and Sell Stock IV 
-803-Bricks Falling When Hit  
+188-Best Time to Buy and Sell Stock IV
+803-Bricks Falling When Hit
 1066-Campus Bikes II (深搜)
-721-Accounts Merge (图-深搜) 
-312-Burst Balloons (DP) 
+721-Accounts Merge (图-深搜)
+312-Burst Balloons (DP)
 
 
 ### 图论与BFS
 
-126-Word Ladder II 
-127-WordLadder `*` 
-279-Perfect Squares `*` 
-301-Remove Invalid Parentheses `*` 
-322-Coin Change 
+126-Word Ladder II
+127-WordLadder `*`
+279-Perfect Squares `*`
+301-Remove Invalid Parentheses `*`
+322-Coin Change
 317-Shortest Distance from All Buildings
-433-Minimum Genetic Mutation 
-490-The Maze `*` 
-505-The Maze II 
-787-Cheapest Flights Within K Stops `*` 
-133-Clone Graph `*` 
-207-Course Schedule `*` 
-210-Course Schedule II `*` 
-269-Alien Dictionary `*` 
-277-Find the Celebrity `*` 
-310-Minimum HeightTrees `*` 
-332-Reconstruct Itinerary `*` 
-773-Sliding Puzzle `*` 
-399-Evaluate Division `*` 
-428-Serialize and Deserialize N-ary Tree (图论) `*` 
-815-Bus Routes (图论 BFS) `*` 
-785-Is Graph Bipartite? (dfs, bfs) `*` 
-
+433-Minimum Genetic Mutation
+490-The Maze `*`
+505-The Maze II
+787-Cheapest Flights Within K Stops `*`
+133-Clone Graph `*`
+207-Course Schedule `*`
+210-Course Schedule II `*`
+269-Alien Dictionary `*`
+277-Find the Celebrity `*`
+310-Minimum HeightTrees `*`
+332-Reconstruct Itinerary `*`
+773-Sliding Puzzle `*`
+399-Evaluate Division `*`
+428-Serialize and Deserialize N-ary Tree (图论) `*`
+815-Bus Routes (图论 BFS) `*`
+785-Is Graph Bipartite? (dfs, bfs) `*`
+818. Race Car
 
 
 ### 并查集 (图的相关问题)
-261-Graph Valid Tree 
-305-Number of Islands II  
-323-Number of Connected Components in an Undirected Graph  
-547-Friend Circles  
-947-Most Stones Removed with Same Row or Column  
-684-Redundant Connection (并查集) 
+261-Graph Valid Tree
+305-Number of Islands II
+323-Number of Connected Components in an Undirected Graph
+547-Friend Circles
+947-Most Stones Removed with Same Row or Column
+684-Redundant Connection (并查集)
 685-Redundant Connection II   (UNION FIND)
 
 
 ### 动态规划
-Knapsack01 Problem 
-010-Regular Expression Matching  
-044-Wildcard Matching  
-045-Jump Game II  * 
-055-Jump Game 
-053-Maximum Subarray 
-062-Unique Paths 
-063-Unique Paths II 
-064-Minimum Path Sum 
-070-Climbing Stairs 
-072-Edit Distance 
-085-Maximal Rectangle 
-091-Decode Ways 
-096-Unique Binary Search Trees 
-118-Pascal's Triangle 
-119-Pascal's Triangle II 
-120-Triangle 
+Knapsack01 Problem
+010-Regular Expression Matching
+044-Wildcard Matching
+045-Jump Game II  *
+055-Jump Game
+053-Maximum Subarray
+062-Unique Paths
+063-Unique Paths II
+064-Minimum Path Sum
+070-Climbing Stairs
+072-Edit Distance
+085-Maximal Rectangle
+091-Decode Ways
+096-Unique Binary Search Trees
+118-Pascal's Triangle
+119-Pascal's Triangle II
+120-Triangle
 121-Best Time to Buy and Sell Stock
 122-Best Time to Buy and Sell Stock II
-123-Best Time to Buy and Sell Stock III 
-152-Maximum Product Subarray 
-174-Dungeon Game 
-198-House Robber 
+123-Best Time to Buy and Sell Stock III
+152-Maximum Product Subarray
+174-Dungeon Game
+198-House Robber
 213-House Robber II
-221-Maximal Square  
-238-Product of Array Except Self 
-256-Paint House 
-264-Ugly Number II 
-265-Paint House II 
-303-Range Sum Query - Immutable  
-304-Range Sum Query 2D - Immutable 
+221-Maximal Square
+238-Product of Array Except Self
+256-Paint House
+264-Ugly Number II
+265-Paint House II
+303-Range Sum Query - Immutable
+304-Range Sum Query 2D - Immutable
 309-Best Time to Buy and Sell Stock with Cooldown
-403-Frog Jump  
-322-Coin Change 
-343-Integer Break 
-338-Counting Bits 
-361-Bomb Enemy 
-486-Predict the Winner  * 
-518-Coin Change 2  
+403-Frog Jump
+322-Coin Change
+343-Integer Break
+338-Counting Bits
+361-Bomb Enemy
+486-Predict the Winner  *
+518-Coin Change 2
 975-Odd Even Jump
 
 746-Min Cost Climbing Stairs
@@ -399,11 +399,11 @@ Longest Common Substring (https://algorithms.tutorialhorizon.com/dynamic-program
 ### 贪心法
 
 253-Meeting Rooms II
-392-Is Subsequence 
-406-Queue Reconstruction by Height 
-435-Non overlaping interval  
-455-Assign Cookies 
-755-Pour Water  * 
+392-Is Subsequence
+406-Queue Reconstruction by Height
+435-Non overlaping interval
+455-Assign Cookies
+755-Pour Water  *
 
 
 
@@ -439,30 +439,30 @@ Longest Common Substring (https://algorithms.tutorialhorizon.com/dynamic-program
 223-Rectangle Area
 231-Power of Two
 258-Add Digits
-263-Ugly Number 
+263-Ugly Number
 031-Next Permutation
 050-Pow(x,n)
 067-Add Binary
 069-Sqrt(x)
 009-Palindrome Number
 593 Valid Square
-939-Minimum Area Rectangle  
-710-Random Pick with Blacklist (随机概率问题) 
-497-Random Point in Non-overlapping Rectangles (随机概率问题) 
-528-Random Pick with Weight (随机概率算法) 
-857-Minimum cost to hire K workers  
-1036-Escape a Large Maze 
-829-Consecutive Numbers Sum (数学: 等差数列) 
+939-Minimum Area Rectangle
+710-Random Pick with Blacklist (随机概率问题)
+497-Random Point in Non-overlapping Rectangles (随机概率问题)
+528-Random Pick with Weight (随机概率算法)
+857-Minimum cost to hire K workers
+1036-Escape a Large Maze
+829-Consecutive Numbers Sum (数学: 等差数列)
 
 
 
 ### 无分类
 
 #### 合理题目
-012-Integer to Roman 
-013-Roman to Integer 
-036-Valid Sudoku 
-048-Rotate Image 
+012-Integer to Roman
+013-Roman to Integer
+036-Valid Sudoku
+048-Rotate Image
 049-Group Anagrams
 054-Spiral Matrix
 058-Length of Last Word
@@ -474,31 +474,31 @@ Longest Common Substring (https://algorithms.tutorialhorizon.com/dynamic-program
 186-Reverse Words in a String II
 205-Isomorphic Strings
 243-Shortest Word Distance
-229-Majority Element II 
+229-Majority Element II
 169-Majority Element
 240-Search a 2D Matrix II
 242-Valid Anagram
 289-Game of Life
-419-Battleships in a Board 
-463-Island Perimeter 
-647-Palindromic Substrings 
+419-Battleships in a Board
+463-Island Perimeter
+647-Palindromic Substrings
 006-ZigZag Conversion
-165-Compare Version Numbers 
-418-Sentence Screen Fitting 
-750-Number Of Corner Rectangles 
-1055-Shortest Way to Form String 
-859-Buddy Strings  
+165-Compare Version Numbers
+418-Sentence Screen Fitting
+750-Number Of Corner Rectangles
+1055-Shortest Way to Form String
+859-Buddy Strings
 777-Swap Adjacent in LR String
 686-Repeated String Match
-957-Prison Cells After N Days 
-041-First Missing Positive 
+957-Prison Cells After N Days
+041-First Missing Positive
 527-Word Abbreviation
-929-Unique Email Addresses (string handling) 
-855-Exam Room  
-849-Maximize Distance to Closest Person 
-724-Find Pivot Index 
-665-Non-decreasing Array 
-723-Candy Crush 
+929-Unique Email Addresses (string handling)
+855-Exam Room
+849-Maximize Distance to Closest Person
+724-Find Pivot Index
+665-Non-decreasing Array
+723-Candy Crush
 
 
 #### 没意思的题
@@ -515,11 +515,11 @@ Longest Common Substring (https://algorithms.tutorialhorizon.com/dynamic-program
 307-Range Sum Query - Mutable
 308-Range Sum Query 2D - Mutable (Binary Index Tree)
 683 K Empty Slots
-677 Map Sum Pairs 
+677 Map Sum Pairs
 588 Design In-Memory File System
 642 Design Search Autocomplete System
-676-Implement Magic Dictionary (trie) 
-731 My Calendar II 
+676-Implement Magic Dictionary (trie)
+731 My Calendar II
 
 
 ### 新做的题
@@ -536,26 +536,26 @@ Longest Common Substring (https://algorithms.tutorialhorizon.com/dynamic-program
 
 ### 没完成
 
-937 Reorder Log Files 
-175 Combine Two Tables 
-811 Subdomain Visit Count 
-193 Valid Phone Numbers 
-176 Second Highest Salary 
-195 Tenth Line 
-557 Reverse Words in a String III 
-1002 Find Common Characters 
-733 Flood Fill 
-836 Rectangle Overlap 
-1010 Pairs of Songs With Total Durations Divisible by 60 
-339 Nested List Weight Sum 
-605 Can Place Flowers 
-709 To Lower Case 
-1021 Remove Outermost Parentheses 
-628 Maximum Product of Three Numbers 
-938 Range Sum of BST 
-170 Two Sum III - Data structure design 
-994 Rotting Oranges 
-453 Minimum Moves to Equal Array Elements 
-507 Perfect Number 
-704 Binary Search 
-538 Convert BST to Greater Tree 
+937 Reorder Log Files
+175 Combine Two Tables
+811 Subdomain Visit Count
+193 Valid Phone Numbers
+176 Second Highest Salary
+195 Tenth Line
+557 Reverse Words in a String III
+1002 Find Common Characters
+733 Flood Fill
+836 Rectangle Overlap
+1010 Pairs of Songs With Total Durations Divisible by 60
+339 Nested List Weight Sum
+605 Can Place Flowers
+709 To Lower Case
+1021 Remove Outermost Parentheses
+628 Maximum Product of Three Numbers
+938 Range Sum of BST
+170 Two Sum III - Data structure design
+994 Rotting Oranges
+453 Minimum Moves to Equal Array Elements
+507 Perfect Number
+704 Binary Search
+538 Convert BST to Greater Tree
