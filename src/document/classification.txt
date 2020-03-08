@@ -192,10 +192,11 @@
 278-First Bad Version
 540-Single Element in a Sorted Array
 744-Find Smallest Letter Greater Than Target
+1170. Compare Strings by Frequency of the Smallest Character
 
 
 ### 二叉树
-094-Binary Tree Inorder Traversal `*`
+094-Binary Tree Inorder Traversal
 095-Unique Binary Search Trees II
 096-Unique Binary Search Trees
 098-Validate Binary Search Tree

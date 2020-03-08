@@ -32,30 +32,8 @@ public class Solution {
 
     // contains negative number
     public int longestSubarray2(int[] nums, int k) {
-        int sum = 0;
-        TreeMap<Integer, Integer> map = new TreeMap<>();
-        map.put(0, -1);
-        int res = 0;
-        for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
-            Integer floorKey = map.floorKey(sum - k);
-            Integer ceilingKey = map.ceilingKey(sum - k);
-            if (floorKey != null) {
-//                res = Math.max(res, i - map.get(floorKey));
-                if (i - map.get(floorKey) > res) {
-                    System.out.println(i + ", " + map.get(floorKey));
-                    res = i - map.get(floorKey);
-                }
-            }
-            if (ceilingKey != null) {
-                if (i - map.get(ceilingKey) > res) {
-                    System.out.println(i + ", " + map.get(ceilingKey));
-                    res = i - map.get(ceilingKey);
-                }
-            }
-            map.put(sum, map.getOrDefault(sum , i));
-        }
-        return res;
+        // TODO:
+        return -1;
     }
 
 

@@ -1,45 +1,40 @@
-package leetcode1007;
+package leetcode.leetcode1007;
 
 import java.util.*;
 
-public class Solution {
+class Solution {
     public int minDominoRotations(int[] A, int[] B) {
-        int res = Math.min(helper(A, B), helper(B, A));
-        return res;
+        return Math.min(swaptAndCount(A, B), swaptAndCount(B, A));
     }
 
-    private int helper(int[] A, int[] B) {
+    private int swaptAndCount(int[] A, int[] B) {
         int[] count = new int[7];
-        for (int value : A) {
-            count[value] += 1;
+        for (int v : A) {
+            count[v] += 1;
         }
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < 7; i++) {
-            list.add(i);
-        }
-
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
         list.sort((a, b) -> count[b] - count[a]);
-        int cnt = 0;
 
-        for (Integer val : list) {
-            int sameCnt = 0;
-            for (int j = 0; j < A.length; j++) {
-                if (A[j] == val) {
-                    sameCnt++;
-                } else if (A[j] != val && B[j] == val) {
-                    cnt++;
-                    sameCnt++;
+
+        for (int v : list) {
+            int num = 0;
+            int swap = 0;
+            for (int j = 0; j < A.length; j++) { // O (N)
+                if (A[j] == v) {
+                    num += 1;
+                } else {
+                    if (A[j] != v && B[j] == v) {
+                        num += 1;
+                        swap += 1;
+                    }
                 }
-
-                if (sameCnt == A.length) {
-                    return cnt;
+                if (num == A.length) {
+                    return swap;
                 }
             }
         }
-
         return -1;
     }
-
 
     public void test() {
         // int[] A = {2, 1, 2, 4, 2, 2}, B = {5, 2, 6, 2, 3, 2};
