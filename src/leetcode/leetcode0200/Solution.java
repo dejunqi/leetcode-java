@@ -1,6 +1,6 @@
 package leetcode.leetcode0200;
 
-public class Solution {
+class Solution {
 
     private int[][] dirs = {{1, 0}, {0, -1}, {-1, 0}, {0, 1}};
 
@@ -32,15 +32,5 @@ public class Solution {
                 helper(x, y, grid, visited);
             }
         }
-    }
-
-    public void test() {
-        char[][] grid = {{'1','1','0','0','0'},
-                         {'1','1','0','0','0'},
-                         {'0','0','1','0','0'},
-                         {'0','0','0','1','1'}};
-
-        int res = numIslands(grid);
-        System.out.println(res);
     }
 }

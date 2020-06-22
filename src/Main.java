@@ -1,5 +1,3 @@
-
-//import microsoftOA.minCostTomakeUniqueLetter.Solution;
 import leetcode.leetcode0068.Solution;
 
 public class Main {
