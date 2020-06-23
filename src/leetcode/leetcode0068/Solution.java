@@ -21,38 +21,36 @@ public class Solution {
     }
 
     private String packLine(String[] words, int l, int r, int curLen, int maxWidth, boolean isLastLine) {
-        int whiteSpace = maxWidth - curLen;
-        int numOfWords = r - l + 1;
+        int totalEmptySpace = maxWidth - curLen;
+        int numWords = r - l + 1;
         StringBuilder sb = new StringBuilder();
-        if (isLastLine || numOfWords == 1) {
-            for (int i = l; i <= r; i++) {
-                sb.append(words[i]);
-                if (sb.length() < maxWidth) {
-                    sb.append(" ");
-                }
+        if (isLastLine || numWords == 1) {
+            while (l < r) {
+                sb.append(words[l]);
+                sb.append(' ');
+                l++;
             }
+            sb.append(words[r]);
             while (sb.length() < maxWidth) {
-                sb.append(" ");
+                sb.append(' ');
             }
         } else {
-            int space = whiteSpace / (numOfWords - 1);
-            int extraSpace = whiteSpace % (numOfWords - 1);
-            String spaceString = new String(new char[space]).replace('\0', ' ');
+            int space = totalEmptySpace / (numWords - 1);
+            int extraSpace = totalEmptySpace % (numWords - 1);
             for (int i = l; i <= r; i++) {
                 sb.append(words[i]);
                 if (i < r) {
-                    sb.append(spaceString);
+                    sb.append(new String(new char[space]).replace('\0', ' '));
                     if (extraSpace > 0) {
-                        String extraSpaceString = new String(new char[extraSpace]).replace('\0', ' ');
                         sb.append(' ');
                         extraSpace--;
                     }
                 }
             }
         }
-
         return sb.toString();
     }
+
 
 
     public void test() {
