@@ -1,18 +1,16 @@
 package leetcode.leetcode0146;
 
 public class DoublyLinkedList {
-
+    public int size;
     private Node head;
     private Node tail;
-    private int size;
-
     public DoublyLinkedList() {
+        size = 0;
         head = null;
         tail = null;
-        size = 0;
     }
 
-    public void insertHead(Node node) {
+    public void insertFromHead(Node node) {
         if (size == 0) {
             head = node;
             tail = node;
@@ -24,31 +22,32 @@ public class DoublyLinkedList {
         size++;
     }
 
-    public void visit(Node node) {
+    public void moveToHead(Node node) {
         if (node.key == head.key) {
             return;
         }
+
         if (node.key == tail.key) {
             tail = tail.prev;
             tail.next = null;
             node.prev = null;
-            insertHead(node);
         } else {
-            Node prev = node.prev;
-            Node post = node.next;
-            prev.next = post;
-            post.prev = prev;
-            insertHead(node);
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
         }
-        // we invoked insertHead which increase the size
+        insertFromHead(node);
         size--;
     }
 
+
     public Node removeLast() {
+        if (size == 0) {
+            return null;
+        }
         Node res = tail;
         if (size == 1) {
-            head = null;
             tail = null;
+            head = null;
         } else {
             tail = tail.prev;
             tail.next = null;
@@ -57,9 +56,4 @@ public class DoublyLinkedList {
         size--;
         return res;
     }
-
-    public int size() {
-        return this.size;
-    }
-
 }
