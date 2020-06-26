@@ -1,16 +1,16 @@
-package leetcode0528;
-
+package leetcode.leetcode0528;
 
 import java.util.Random;
 import java.util.TreeMap;
 
 public class RandomPickWeight {
-    TreeMap<Integer, Integer> map;
-    Random random;
+
+    private TreeMap<Integer, Integer> map;
+    private Random rand = new Random();
     int sum = 0;
+
     public RandomPickWeight(int[] w) {
         map = new TreeMap<>();
-        random = new Random();
         for (int i = 0; i < w.length; i++) {
             sum += w[i];
             map.put(sum, i);
@@ -18,8 +18,14 @@ public class RandomPickWeight {
     }
 
     public int pickIndex() {
-        int w = map.higherKey(random.nextInt(sum));
-        return map.get(w);
+        int idx = rand.nextInt(sum);
+        int key = map.higherKey(idx);
+        return map.get(key);
     }
 }
 
+/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution obj = new Solution(w);
+ * int param_1 = obj.pickIndex();
+ */
