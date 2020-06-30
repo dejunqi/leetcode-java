@@ -1,4 +1,4 @@
-package utils;
+package leetcode.utils;
 
 public class Pair<K, V> {
     private K key;

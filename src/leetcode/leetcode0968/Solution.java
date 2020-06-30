@@ -1,6 +1,6 @@
 package leetcode0968;
 
-import utils.TreeNode;
+import leetcode.utils.TreeNode;
 
 public class Solution {
     private enum State {CAMERA, COVERED_NODE, LEAF};

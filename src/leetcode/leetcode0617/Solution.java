@@ -1,5 +1,5 @@
 package leetcode0617;
-import utils.*;
+import leetcode.utils.*;
 
 public class Solution {
     public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {

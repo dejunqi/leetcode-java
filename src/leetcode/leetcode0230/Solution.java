@@ -1,6 +1,6 @@
 package leetcode0230;
 
-import utils.TreeNode;
+import leetcode.utils.TreeNode;
 
 import java.util.Stack;
 

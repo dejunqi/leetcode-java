@@ -1,7 +1,7 @@
 package leetcode0853;
 
 
-import utils.Pair;
+import leetcode.utils.Pair;
 
 import java.util.ArrayList;
 import java.util.List;

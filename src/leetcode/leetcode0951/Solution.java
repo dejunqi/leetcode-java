@@ -1,5 +1,5 @@
 package leetcode0951;
-import utils.TreeNode;
+import leetcode.utils.TreeNode;
 
 public class Solution {
     public boolean flipEquiv(TreeNode root1, TreeNode root2) {

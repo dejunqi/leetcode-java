@@ -1,4 +1,4 @@
-import leetcode.leetcode0050.Solution;
+import leetcode.leetcode0236.Solution;
 
 public class Main {
 
