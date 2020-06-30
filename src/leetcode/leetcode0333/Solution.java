@@ -1,7 +1,5 @@
 package leetcode0333;
-import utils.TreeNode;
-
-import java.util.Map;
+import leetcode.utils.TreeNode;
 
 public class Solution {
 

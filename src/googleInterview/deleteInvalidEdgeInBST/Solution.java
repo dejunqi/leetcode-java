@@ -1,6 +1,6 @@
 package googleInterview.deleteInvalidEdgeInBST;
 
-import utils.TreeNode;
+import leetcode.utils.TreeNode;
 
 /*
        7

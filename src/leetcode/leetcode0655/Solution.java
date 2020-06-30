@@ -1,5 +1,5 @@
 package leetcode0655;
-import utils.*;
+import leetcode.utils.*;
 
 import java.util.LinkedList;
 import java.util.List;

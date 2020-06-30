@@ -1,4 +1,4 @@
-package utils;
+package leetcode.utils;
 
 public class Triple<T, U, V> {
     T t;

@@ -1,7 +1,4 @@
-import leetcode.leetcode0146.Solution;
-
-import java.util.Random;
-import java.util.TreeMap;
+import leetcode.leetcode0236.Solution;
 
 public class Main {
 

@@ -1,6 +1,6 @@
 package leetcode0098;
 
-import utils.TreeNode;
+import leetcode.utils.TreeNode;
 
 /**
  * Definition for a binary tree node.

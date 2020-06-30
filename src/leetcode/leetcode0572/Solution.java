@@ -1,6 +1,6 @@
 package leetcode0572;
 
-import utils.TreeNode;
+import leetcode.utils.TreeNode;
 
 public class Solution {
     public boolean isSubtree(TreeNode s, TreeNode t) {

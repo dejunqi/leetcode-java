@@ -1,5 +1,5 @@
 package leetcode0285;
-import utils.TreeNode;
+import leetcode.utils.TreeNode;
 
 public class Solution {
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {

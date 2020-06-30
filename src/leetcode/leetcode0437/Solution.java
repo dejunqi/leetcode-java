@@ -1,5 +1,5 @@
 package leetcode0437;
-import utils.TreeNode;
+import leetcode.utils.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

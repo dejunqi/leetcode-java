@@ -1,5 +1,5 @@
 package leetcode0092;
-import utils.TreeNode;
+import leetcode.utils.TreeNode;
 
 /*
 * if node.val >= right-parent or node.val <= left-parent
