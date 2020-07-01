@@ -11,27 +11,28 @@ public class Solution {
         int prevTime = -1;
 
         for (String log : logs) {
+
             String[] strs = log.split(":");
             int id = Integer.parseInt(strs[0]);
             String type = strs[1];
-
             int timestamp = Integer.parseInt(strs[2]);
-            int prevId = -1;
+
             if (type.equals("start")) {
-                timestamp -= 1;
                 if (!stack.isEmpty()) {
-                    prevId = stack.peek();
-                    res[prevId] += timestamp - prevTime;
+                    res[stack.peek()] += timestamp - prevTime - 1;
                 }
                 stack.push(id);
+                prevTime = timestamp - 1;
             } else {
-                prevId = stack.pop();
+                int prevId = stack.pop();
                 res[prevId] += timestamp - prevTime;
+                prevTime = timestamp;
             }
-            prevTime = timestamp;
+
         }
 
         return res;
+
     }
 
     public void test() {
