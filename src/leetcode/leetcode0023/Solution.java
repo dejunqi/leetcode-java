@@ -2,7 +2,6 @@ package leetcode.leetcode0023;
 
 import leetcode.utils.ListNode;
 
-import javax.management.QueryEval;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
