@@ -1,27 +1,23 @@
 package leetcode.leetcode0023;
 
+import leetcode.utils.ListNode;
 
+import javax.management.QueryEval;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Solution {
 
-    private class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int v) {val = v;}
-    }
-
-    public ListNode  mergeKLists(ListNode[] lists) {
-        PriorityQueue<ListNode> queue = new PriorityQueue<>((a, b) -> a.val - b.val);
-        for (ListNode n : lists) {
-            if (n != null) {
-                queue.offer(n);
-            }
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length == 0) {
+            return null;
         }
-
-        ListNode dummy = new ListNode(0);
-        ListNode cur = dummy;
-
+        PriorityQueue<ListNode> queue = new PriorityQueue<>(Comparator.comparingInt(o -> o.val)) ;
+        for (ListNode n : lists) {
+            queue.offer(n);
+        }
+        ListNode dummyHead = new ListNode(0);
+        ListNode cur = dummyHead;
         while (!queue.isEmpty()) {
             ListNode node = queue.poll();
             cur.next = node;
@@ -30,7 +26,6 @@ public class Solution {
                 queue.offer(node.next);
             }
         }
-
-        return dummy.next;
+        return dummyHead.next;
     }
 }
