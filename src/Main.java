@@ -6,5 +6,4 @@ public class Main {
         Solution so = new Solution();
         so.test();
     }
-
 }
