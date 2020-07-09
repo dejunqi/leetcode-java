@@ -1,16 +1,15 @@
-package leetcode0460;
-
-import java.util.LinkedHashSet;
+package leetcode.leetcode0460;
 
 public class Node {
-    int count = 0;
-    LinkedHashSet<Integer> keys;
-    Node prev;
-    Node next;
+    int key;
+    int value;
+    int visitCnt;
+    int time;
 
-    Node(int count) {
-        this.count = count;
-        keys = new LinkedHashSet<>();
-        prev = next = null;
+    public Node (int key, int value, int time) {
+        this.key = key;
+        this.value = value;
+        visitCnt = 1;
+        this.time = time;
     }
 }
