@@ -7,7 +7,6 @@ public class AllOne {
     private Node head;
     private Node tail;
     Map<String, Node> map;
-    int size;
 
     /** Initialize your data structure here. */
     public AllOne() {
@@ -38,7 +37,7 @@ public class AllOne {
                     node.next = newNode;
                     newNode.prev = node;
                     newNode.next = next;
-                    newNode.prev = newNode;
+                    next.prev = newNode;
                     map.put(key, newNode);
                 } else {
                     next.keys.add(key);
@@ -47,7 +46,7 @@ public class AllOne {
             }
 
             if (node.keys.size() == 0) {
-
+                removeNode(node);
             }
 
         } else { // map does not contains the key
@@ -56,7 +55,15 @@ public class AllOne {
                 head.keys.add(key);
                 tail = head;
             } else {
-                head.keys.add(key);
+                if (head.freq == 1) {
+                    head.keys.add(key);
+                } else {
+                    Node newNode = new Node(1);
+                    newNode.keys.add(key);
+                    newNode.next = head;
+                    head.prev = newNode;
+                    head = newNode;
+                }
             }
             map.put(key, head);
         }
@@ -64,18 +71,58 @@ public class AllOne {
 
     /** Decrements an existing key by 1. If Key's value is 1, remove it from the data structure. */
     public void dec(String key) {
+        if (!map.containsKey(key)) {
+            return;
+        }
+        Node node = map.get(key);
+        node.keys.remove(key);
+        int freq = node.freq;
+        if (freq == 1) {
+            map.remove(key);
+        } else if (node == head) {
+            Node newNode = new Node(freq - 1);
+            newNode.keys.add(key);
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+            map.put(key, head);
+        } else {
+            Node prev = node.prev;
+            if (freq - prev.freq == 1) {
+                prev.keys.add(key);
+                map.put(key, prev);
+            } else {
+                Node newNode = new Node(freq - 1);
+                prev.next = newNode;
+                newNode.prev = prev;
+                newNode.next = node;
+                node.prev = newNode;
+                newNode.keys.add(key);
+                map.put(key, newNode);
+            }
+        }
 
+        if (node.keys.size() == 0) {
+            removeNode(node);
+        }
     }
 
     /** Returns one of the keys with maximal value. */
     public String getMaxKey() {
-        return "";
+        if (head == null) {
+            return "";
+        }
+        return tail.keys.iterator().next();
     }
 
     /** Returns one of the keys with Minimal value. */
     public String getMinKey() {
-        return "";
+        if (head == null) {
+            return "";
+        }
+        return head.keys.iterator().next();
     }
+
 
     public void visualize() {
         System.out.println("Map");
@@ -92,6 +139,27 @@ public class AllOne {
             cur = cur.next;
         }
         System.out.println("\n");
+    }
+
+    private void removeNode(Node node) {
+        if (node == head) {
+            head = head.next;
+            node.next = null;
+            if (head != null) {
+                head.prev = null;
+            }
+        } else if (node == tail) {
+            tail = tail.prev;
+            node.prev = null;
+            if (tail != null) {
+                tail.next = null;
+            }
+        } else {
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+            node.prev = null;
+            node.next = null;
+        }
     }
 
 }
